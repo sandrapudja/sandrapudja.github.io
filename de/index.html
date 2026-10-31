@@ -218,6 +218,8 @@ form{display:grid;gap:16px}
 .mail-line button:hover{border-color:var(--fg);color:var(--fg)}
 .sent{display:none;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--muted)}
 .sent.on{display:block}
+.sent.ok{border-color:#2f6b3a;color:var(--fg);background:#102015}
+.sent.err{border-color:var(--rec-dim);color:var(--fg)}
 .live{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--rec-dim);aspect-ratio:4/5;max-width:100%;background:var(--panel)}
 .live img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;filter:saturate(.8) contrast(1.05)}
 .live .tag,.live .tc2{position:absolute;top:12px;display:flex;align-items:center;gap:8px;background:rgba(12,12,14,.7);backdrop-filter:blur(6px);padding:6px 10px;border-radius:999px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)}
@@ -420,17 +422,17 @@ footer a:hover{color:var(--fg)}
     <div class="card">
       <form id="booking" novalidate>
         <div class="row2">
-          <div class="field"><label for="f-name" data-i18n="book.name"></label><input id="f-name" type="text" autocomplete="name" placeholder="Ana Horvat"><span class="err" data-i18n="book.err.name"></span></div>
-          <div class="field"><label for="f-email" data-i18n="book.email"></label><input id="f-email" type="email" autocomplete="email" placeholder="ana@production.com"><span class="err" data-i18n="book.err.email"></span></div>
+          <div class="field"><label for="f-name" data-i18n="book.name"></label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ana Horvat"><span class="err" data-i18n="book.err.name"></span></div>
+          <div class="field"><label for="f-email" data-i18n="book.email"></label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="ana@production.com"><span class="err" data-i18n="book.err.email"></span></div>
         </div>
         <div class="row2">
-          <div class="field"><label for="f-type" data-i18n="book.type"></label><select id="f-type"><option value="tv" data-i18n="svc.1.t"></option><option value="live" data-i18n="svc.2.t"></option><option value="org" data-i18n="svc.3.t"></option><option value="consult" data-i18n="svc.4.t"></option></select></div>
-          <div class="field"><label for="f-date" data-i18n="book.date"></label><input id="f-date" type="date"></div>
+          <div class="field"><label for="f-type" data-i18n="book.type"></label><select id="f-type" name="type"><option value="tv" data-i18n="svc.1.t"></option><option value="live" data-i18n="svc.2.t"></option><option value="org" data-i18n="svc.3.t"></option><option value="consult" data-i18n="svc.4.t"></option></select></div>
+          <div class="field"><label for="f-date" data-i18n="book.date"></label><input id="f-date" name="date" type="date"></div>
         </div>
-        <div class="field"><label for="f-msg" data-i18n="book.msg"></label><textarea id="f-msg" placeholder="Three sentences are enough."></textarea><span class="err" data-i18n="book.err.msg"></span></div>
+        <div class="field"><label for="f-msg" data-i18n="book.msg"></label><textarea id="f-msg" name="message" placeholder="Three sentences are enough."></textarea><span class="err" data-i18n="book.err.msg"></span></div>
         <button class="btn primary" type="submit" style="justify-self:start"><span class="rec-dot" style="background:var(--bg);animation:none"></span><span data-i18n="book.send"></span></button>
         <p class="mail-line"><span data-i18n="book.or"></span> <code id="mail-addr">hello@sandrapudja.com</code> <button type="button" id="copy-mail" data-i18n="book.copy"></button></p>
-        <div class="sent" id="sent" data-i18n="book.sent"></div>
+        <div class="sent" id="sent"></div><input type="text" name="website" id="f-hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
       </form>
     </div>
     <div class="live" aria-hidden="true">
@@ -478,7 +480,7 @@ footer a:hover{color:var(--fg)}
       "book.name":"Ime i prezime","book.email":"Tvoj e-mail","book.type":"Vrsta projekta","book.date":"Okvirni datum","book.msg":"O čemu se radi","book.send":"Pošalji upit","book.or":"ili direktno na","book.copy":"Kopiraj","book.copied":"Kopirano",
       "book.err.name":"Upiši ime.","book.err.email":"Upiši ispravan e-mail.","book.err.msg":"Napiši barem rečenicu.",
       "book.sent":"Otvara se tvoj mail program s ispunjenom porukom. Ako se nije otvorio, kopiraj adresu iznad i pošalji ručno.",
-      "book.subject":"Booking upit","book.body.type":"Vrsta projekta","book.body.date":"Okvirni datum","book.body.from":"Od",
+      "book.sending":"Šaljem…","book.ok":"Poslano. Sandra odgovara unutar 48 sati — kopiju dobivaš na mail.","book.fail":"Trenutno ne mogu poslati. Piši direktno na hello@sandrapudja.com.","book.subject":"Booking upit","book.body.type":"Vrsta projekta","book.body.date":"Okvirni datum","book.body.from":"Od",
       "end.eyebrow":"Kraj programa","end.title":"End of transmission","end.col":"Sandra Pudja · TV producentica · Berlin" },
     en:{ "intro.lbl":"click to skip","ch0.close":"close","ch0.tag":"secret channel","ch0.title":"Happy birthday, Sandra.","ch0.p1":"You always wanted a website of your own. Here it is. It is built as a control room because that is where I see you most: calm while everyone around you shouts, with a plan finished before anyone realises one is needed.","ch0.p2":"Change, add and delete anything here. The only thing that stays is this channel.","ch0.sig":"— Andro","hero.role":"TV producer","hero.tag":"organisational wonder","hero.scroll":"Scroll",
       "svc.eyebrow":"Services","svc.cams":"4 cameras · all live","svc.title":"What she does","svc.lede":"Four things Sandra does, and does so well nobody notices. That is the point.","svc.hint":"Click for details",
@@ -497,7 +499,7 @@ footer a:hover{color:var(--fg)}
       "book.name":"Full name","book.email":"Your e-mail","book.type":"Project type","book.date":"Rough date","book.msg":"What it is about","book.send":"Send request","book.or":"or directly at","book.copy":"Copy","book.copied":"Copied",
       "book.err.name":"Enter your name.","book.err.email":"Enter a valid e-mail.","book.err.msg":"Write at least a sentence.",
       "book.sent":"Your mail app opens with the message filled in. If it did not, copy the address above and send it yourself.",
-      "book.subject":"Booking request","book.body.type":"Project type","book.body.date":"Rough date","book.body.from":"From",
+      "book.sending":"Sending…","book.ok":"Sent. Sandra replies within 48 hours — you also get a copy by e-mail.","book.fail":"Could not send right now. Write directly to hello@sandrapudja.com.","book.subject":"Booking request","book.body.type":"Project type","book.body.date":"Rough date","book.body.from":"From",
       "end.eyebrow":"End of programme","end.title":"End of transmission","end.col":"Sandra Pudja · TV producer · Berlin" },
     de:{ "intro.lbl":"Klick zum Überspringen","ch0.close":"schließen","ch0.tag":"geheimer Kanal","ch0.title":"Alles Gute zum Geburtstag, Sandra.","ch0.p1":"Du wolltest schon immer eine eigene Website. Hier ist sie. Gebaut wie eine Regie, weil ich dich dort am häufigsten sehe: ruhig, während alle um dich herum schreien, mit einem Plan, der fertig ist, bevor jemand merkt, dass er gebraucht wird.","ch0.p2":"Ändere, ergänze und lösche hier, was du willst. Das Einzige, was bleibt, ist dieser Kanal.","ch0.sig":"— Andro","hero.role":"TV-Produzentin","hero.tag":"Organisationswunder","hero.scroll":"Scrollen",
       "svc.eyebrow":"Leistungen","svc.cams":"4 Kameras · alle live","svc.title":"Was sie macht","svc.lede":"Vier Dinge, die Sandra macht, und zwar so, dass es niemand merkt. Genau das ist der Punkt.","svc.hint":"Klick für Details",
@@ -516,7 +518,7 @@ footer a:hover{color:var(--fg)}
       "book.name":"Vor- und Nachname","book.email":"Deine E-Mail","book.type":"Projektart","book.date":"Ungefähres Datum","book.msg":"Worum geht es","book.send":"Anfrage senden","book.or":"oder direkt an","book.copy":"Kopieren","book.copied":"Kopiert",
       "book.err.name":"Namen eingeben.","book.err.email":"Gültige E-Mail eingeben.","book.err.msg":"Mindestens einen Satz schreiben.",
       "book.sent":"Dein Mailprogramm öffnet sich mit der ausgefüllten Nachricht. Falls nicht, kopiere die Adresse oben und sende sie selbst.",
-      "book.subject":"Booking-Anfrage","book.body.type":"Projektart","book.body.date":"Ungefähres Datum","book.body.from":"Von",
+      "book.sending":"Wird gesendet…","book.ok":"Gesendet. Sandra antwortet innerhalb von 48 Stunden — du bekommst eine Kopie per E-Mail.","book.fail":"Senden gerade nicht möglich. Schreib direkt an hello@sandrapudja.com.","book.subject":"Booking-Anfrage","book.body.type":"Projektart","book.body.date":"Ungefähres Datum","book.body.from":"Von",
       "end.eyebrow":"Sendeschluss","end.title":"End of transmission","end.col":"Sandra Pudja · TV-Produzentin · Berlin" }
   };
 
@@ -645,10 +647,25 @@ footer a:hover{color:var(--fg)}
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ fieldOf("f-email").classList.add("bad"); ok=false; }
     if (msg.length < 10){ fieldOf("f-msg").classList.add("bad"); ok=false; }
     if (!ok) return;
-    var t = T[lang]; var subject = t["book.subject"]+": "+type+" — "+name;
-    var body = t["book.body.type"]+": "+type+"\n"+t["book.body.date"]+": "+(date||"—")+"\n"+t["book.body.from"]+": "+name+" <"+email+">\n\n"+msg;
-    sent.classList.add("on");
-    try{ window.location.href = "mailto:"+MAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body); }catch(err){}
+    var t = T[lang]; var btn = form.querySelector('button[type="submit"]'); var btnTxt = btn.querySelector('[data-i18n="book.send"]');
+    var fd = new FormData(); fd.append("name", name); fd.append("email", email); fd.append("type", sel.value); fd.append("date", date); fd.append("message", msg); fd.append("lang", lang); fd.append("website", document.getElementById("f-hp").value);
+    btn.disabled = true; btnTxt.textContent = t["book.sending"]; sent.className = "sent"; sent.textContent = "";
+    fetch("/send.php", { method:"POST", body: fd }).then(function(r){ return r.json().catch(function(){ return {ok:false}; }).then(function(j){ return {status:r.status, j:j}; }); })
+    .then(function(res){
+      btn.disabled = false; btnTxt.textContent = t["book.send"];
+      if (res.j && res.j.ok){ sent.className = "sent on ok"; sent.textContent = t["book.ok"]; form.reset(); }
+      else {
+        var e = res.j && res.j.error;
+        if (e === "name"){ fieldOf("f-name").classList.add("bad"); } else if (e === "email"){ fieldOf("f-email").classList.add("bad"); } else if (e === "message"){ fieldOf("f-msg").classList.add("bad"); }
+        else { sent.className = "sent on err"; sent.textContent = t["book.fail"]; }
+      }
+    }).catch(function(){
+      btn.disabled = false; btnTxt.textContent = t["book.send"];
+      sent.className = "sent on err"; sent.textContent = t["book.fail"];
+      var subject = t["book.subject"]+": "+sel.options[sel.selectedIndex].textContent+" — "+name;
+      var body = t["book.body.type"]+": "+sel.options[sel.selectedIndex].textContent+"\n"+t["book.body.date"]+": "+(date||"—")+"\n"+t["book.body.from"]+": "+name+" <"+email+">\n\n"+msg;
+      try{ window.location.href = "mailto:"+MAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body); }catch(err){}
+    });
   });
   var copyBtn = document.getElementById("copy-mail");
   copyBtn.addEventListener("click", function(){

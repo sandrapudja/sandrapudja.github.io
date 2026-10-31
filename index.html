@@ -182,7 +182,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* stacked cards */
 .stack{position:relative;--n:6}
-.scard{position:sticky;top:calc(56px + 24px + env(safe-area-inset-top,0px));margin-bottom:24px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(26px,4vw,48px);min-height:min(62vh,520px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:start;transform-origin:top center;will-change:transform,filter;box-shadow:0 -10px 40px rgba(0,0,0,.35)}
+.scard{position:sticky;top:calc(76px + var(--i,0)*18px + env(safe-area-inset-top,0px));margin-bottom:36vh;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(24px,3.6vw,44px);min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:start;transform-origin:top center;will-change:transform,filter;box-shadow:0 -14px 40px rgba(0,0,0,.55)}
+.scard:last-child{margin-bottom:0}
+@media (max-width:640px){.scard{top:calc(70px + var(--i,0)*12px + env(safe-area-inset-top,0px));margin-bottom:46vh}}
 .scard:nth-child(2){background:#19191e}.scard:nth-child(3){background:#1b1b20}.scard:nth-child(4){background:#1d1d22}.scard:nth-child(5){background:#1f1f24}.scard:nth-child(6){background:#212126}
 .scard .n{font-size:clamp(64px,10vw,150px);font-weight:700;letter-spacing:-.06em;line-height:.8;color:var(--line-strong);font-variant-numeric:tabular-nums}
 .scard .n b{display:block;font-size:.16em;font-weight:500;letter-spacing:.14em;color:var(--muted);font-family:var(--font-mono);margin-top:14px}
@@ -195,7 +197,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .scard p.long{color:var(--fg);opacity:.85;font-size:clamp(15px,1.3vw,17px);max-width:34em;margin-top:14px}
 .scard .scta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:22px}
 .scard .scta .btn{padding:11px 18px;font-size:14px}
-.stack-end{height:6vh}
+.stack-end{height:26vh}
 .way-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3.5vw,40px);background:var(--bg-2)}
 .way-cta h3{font-size:clamp(24px,3vw,40px);line-height:1}
 .way-cta p{margin:8px 0 0;color:var(--muted);max-width:34em}
@@ -412,12 +414,12 @@ footer a:hover{color:var(--fg)}
   <div class="sec-head rv"><div><div class="k"><span class="mono">CH 03</span><i></i><span class="mono" data-i18n="way.eyebrow"></span></div><h2 data-i18n="way.title"></h2></div><p data-i18n="way.lede"></p></div>
   <div class="stack-hint mono rv"><span data-i18n="x.stackhint"></span><i></i><span>01 → 06</span></div>
   <div class="stack" id="stack">
-    <article class="scard" data-i="1"><span class="tcx"><span class="mono">00:00:00</span><span class="tally"></span></span><div class="n">01<b>/ 06</b></div><div><h3 data-i18n="way.1.t"></h3><p data-i18n="way.1.d"></p><p class="long" data-i18n="way.1.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.1.cta"></a><span class="mono" data-i18n="way.1.tag"></span></div></div></article>
-    <article class="scard" data-i="2"><span class="tcx"><span class="mono">00:12:00</span><span class="tally"></span></span><div class="n">02<b>/ 06</b></div><div><h3 data-i18n="way.2.t"></h3><p data-i18n="way.2.d"></p><p class="long" data-i18n="way.2.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.2.cta"></a><span class="mono" data-i18n="way.2.tag"></span></div></div></article>
-    <article class="scard" data-i="3"><span class="tcx"><span class="mono">00:24:00</span><span class="tally"></span></span><div class="n">03<b>/ 06</b></div><div><h3 data-i18n="way.3.t"></h3><p data-i18n="way.3.d"></p><p class="long" data-i18n="way.3.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.3.cta"></a><span class="mono" data-i18n="way.3.tag"></span></div></div></article>
-    <article class="scard" data-i="4"><span class="tcx"><span class="mono">00:36:00</span><span class="tally"></span></span><div class="n">04<b>/ 06</b></div><div><h3 data-i18n="way.4.t"></h3><p data-i18n="way.4.d"></p><p class="long" data-i18n="way.4.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.4.cta"></a><span class="mono" data-i18n="way.4.tag"></span></div></div></article>
-    <article class="scard" data-i="5"><span class="tcx"><span class="mono">00:48:00</span><span class="tally"></span></span><div class="n">05<b>/ 06</b></div><div><h3 data-i18n="way.5.t"></h3><p data-i18n="way.5.d"></p><p class="long" data-i18n="way.5.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.5.cta"></a><span class="mono" data-i18n="way.5.tag"></span></div></div></article>
-    <article class="scard" data-i="6"><span class="tcx"><span class="mono">00:60:00</span><span class="tally"></span></span><div class="n">06<b>/ 06</b></div><div><h3 data-i18n="way.6.t"></h3><p data-i18n="way.6.d"></p><p class="long" data-i18n="way.6.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.6.cta"></a><span class="mono" data-i18n="way.6.tag"></span></div></div></article>
+    <article class="scard" data-i="1" style="--i:0"><span class="tcx"><span class="mono">00:00:00</span><span class="tally"></span></span><div class="n">01<b>/ 06</b></div><div><h3 data-i18n="way.1.t"></h3><p data-i18n="way.1.d"></p><p class="long" data-i18n="way.1.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.1.cta"></a><span class="mono" data-i18n="way.1.tag"></span></div></div></article>
+    <article class="scard" data-i="2" style="--i:1"><span class="tcx"><span class="mono">00:12:00</span><span class="tally"></span></span><div class="n">02<b>/ 06</b></div><div><h3 data-i18n="way.2.t"></h3><p data-i18n="way.2.d"></p><p class="long" data-i18n="way.2.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.2.cta"></a><span class="mono" data-i18n="way.2.tag"></span></div></div></article>
+    <article class="scard" data-i="3" style="--i:2"><span class="tcx"><span class="mono">00:24:00</span><span class="tally"></span></span><div class="n">03<b>/ 06</b></div><div><h3 data-i18n="way.3.t"></h3><p data-i18n="way.3.d"></p><p class="long" data-i18n="way.3.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.3.cta"></a><span class="mono" data-i18n="way.3.tag"></span></div></div></article>
+    <article class="scard" data-i="4" style="--i:3"><span class="tcx"><span class="mono">00:36:00</span><span class="tally"></span></span><div class="n">04<b>/ 06</b></div><div><h3 data-i18n="way.4.t"></h3><p data-i18n="way.4.d"></p><p class="long" data-i18n="way.4.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.4.cta"></a><span class="mono" data-i18n="way.4.tag"></span></div></div></article>
+    <article class="scard" data-i="5" style="--i:4"><span class="tcx"><span class="mono">00:48:00</span><span class="tally"></span></span><div class="n">05<b>/ 06</b></div><div><h3 data-i18n="way.5.t"></h3><p data-i18n="way.5.d"></p><p class="long" data-i18n="way.5.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.5.cta"></a><span class="mono" data-i18n="way.5.tag"></span></div></div></article>
+    <article class="scard" data-i="6" style="--i:5"><span class="tcx"><span class="mono">00:60:00</span><span class="tally"></span></span><div class="n">06<b>/ 06</b></div><div><h3 data-i18n="way.6.t"></h3><p data-i18n="way.6.d"></p><p class="long" data-i18n="way.6.l"></p><div class="scta"><a class="btn primary" href="#booking-sec" data-i18n="way.6.cta"></a><span class="mono" data-i18n="way.6.tag"></span></div></div></article>
   </div>
   <div class="stack-end"></div>
   <div class="way-cta rv"><div><h3 data-i18n="way.cta.t"></h3><p data-i18n="way.cta.d"></p></div><div class="ctas"><a class="btn primary" href="#booking-sec" data-i18n="book.title"></a><a class="btn" href="#services" data-i18n="x.see"></a></div></div>
@@ -607,7 +609,7 @@ footer a:hover{color:var(--fg)}
       var r = c.getBoundingClientRect();
       var next = cards[i+1]; var pr = next ? Math.min(1, Math.max(0, (vh - next.getBoundingClientRect().top) / (vh*0.8))) : 0;
       /* pr = how far the next card has climbed over this one */
-      var sc = 1 - pr*0.06*(1), ty = -pr*18, dim = pr*0.55;
+      var sc = 1 - pr*0.05, ty = 0, dim = pr*0.5;
       c.style.transform = "translateY("+ty+"px) scale("+sc+")";
       c.style.filter = "brightness("+(1-dim)+")";
       c.classList.toggle("hot", r.top <= top + 40 && pr < 0.5);

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sandrapudja.com/sitemap.xml

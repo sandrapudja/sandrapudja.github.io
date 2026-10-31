@@ -52,3 +52,10 @@ The `code` under the form and the fallback `mailto:` use `MAIL` in `index.html`;
 - Don't change the domain in `canonical`/`sitemap.xml`/`.htaccess` unless the site moves.
 - Test on a phone width before pushing: the stacked cards and multiviewer must still work.
 - Spell the author's name "Andro Anic".
+
+## Password gate (temporary)
+
+The whole site is behind a curtain page (`gate.php`) until the visitor enters the password. Hint shown: "Kaj?". Answer: `zmaj` (case-insensitive, trailing "!" allowed).
+On success the server sets an HttpOnly cookie `sp_access` (90 days) and the page reloads into the site.
+`og.jpg` and `robots.txt` stay public so share previews keep working; everything else, including `send.php`, needs the cookie.
+**To open the site to everyone:** delete the `# --- GATE` … `# --- END GATE` block in `.htaccess` and push. `gate.php` can stay or be deleted.

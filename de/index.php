@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/../_gate.php'; ?>
 <!doctype html>
 <html lang="de">
 <head>
@@ -452,8 +453,8 @@ footer a:hover{color:var(--fg)}
 
 <footer><div class="wrap">
   <div class="fgrid" id="fgrid">
-    <div><h4 data-i18n="f.services"></h4><ul><li><a href="tv-production.html" data-fs="tv-production">TV production</a></li><li><a href="live-event-production.html" data-fs="live-event-production">Live & event production</a></li><li><a href="shoot-organisation.html" data-fs="shoot-organisation">Shoot organisation & logistics</a></li><li><a href="production-consulting.html" data-fs="production-consulting">Consulting & mentoring</a></li></ul></div>
-    <div><h4 data-i18n="f.local"></h4><ul><li><a href="tv-producer-berlin.html" data-fs="tv-producer-berlin">TV producer in Berlin</a></li></ul></div>
+    <div><h4 data-i18n="f.services"></h4><ul><li><a href="tv-production.php" data-fs="tv-production">TV production</a></li><li><a href="live-event-production.php" data-fs="live-event-production">Live & event production</a></li><li><a href="shoot-organisation.php" data-fs="shoot-organisation">Shoot organisation & logistics</a></li><li><a href="production-consulting.php" data-fs="production-consulting">Consulting & mentoring</a></li></ul></div>
+    <div><h4 data-i18n="f.local"></h4><ul><li><a href="tv-producer-berlin.php" data-fs="tv-producer-berlin">TV producer in Berlin</a></li></ul></div>
     <div><h4 data-i18n="f.contact"></h4><ul><li><code style="font-family:var(--font-mono);font-size:13px;color:var(--muted)">hello@sandrapudja.com</code></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
     <div><h4 data-i18n="f.about"></h4><p class="fabout" data-i18n="f.abouttxt"></p></div>
   </div>
@@ -540,7 +541,7 @@ footer a:hover{color:var(--fg)}
     document.querySelectorAll(".lang-menu button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-lang")===l ? "true":"false"); });
     document.getElementById("lang-cur-t").textContent = l.toUpperCase();
     var FS = {"en": {"tv-production": "TV production", "live-event-production": "Live & event production", "shoot-organisation": "Shoot organisation & logistics", "production-consulting": "Consulting & mentoring", "tv-producer-berlin": "TV producer in Berlin"}, "de": {"tv-production": "TV-Produktion", "live-event-production": "Live- & Event-Produktion", "shoot-organisation": "Drehorganisation & Logistik", "production-consulting": "Beratung & Mentoring", "tv-producer-berlin": "TV-Produzentin in Berlin"}, "hr": {"tv-production": "TV produkcija", "live-event-production": "Produkcija eventa / live", "shoot-organisation": "Organizacija i logistika snimanja", "production-consulting": "Konzultacije i mentoring", "tv-producer-berlin": "TV producentica u Berlinu"}};
-    document.querySelectorAll("[data-fs]").forEach(function(a){ var k = a.getAttribute("data-fs"); a.textContent = (FS[l]||FS.en)[k]; a.setAttribute("href", "/" + (l==="de" ? "de/" : "") + k + ".html"); });
+    document.querySelectorAll("[data-fs]").forEach(function(a){ var k = a.getAttribute("data-fs"); a.textContent = (FS[l]||FS.en)[k]; a.setAttribute("href", "/" + (l==="de" ? "de/" : "") + k + ".php"); });
     updateWay();
     try{ localStorage.setItem("sp-lang2", l); }catch(e){}
   }

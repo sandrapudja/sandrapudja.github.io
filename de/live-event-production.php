@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/../_gate.php'; ?>
 <!doctype html>
 <html lang="de">
 <head>
@@ -5,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Live- & Event-Produktion | Sandra Pudja — Berlin</title>
 <meta name="description" content="Live-Übertragungen und Event-Produktion in Berlin: Preisverleihungen, Konferenzen, Livestreams, Mehrkamera-Live-Produktionen. Rundown auf die Minute, kein zweiter Take. Sandra Pudja buchen.">
-<link rel="canonical" href="https://sandrapudja.com/de/live-event-production.html">
-<link rel="alternate" hreflang="en" href="https://sandrapudja.com/live-event-production.html">
-<link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/live-event-production.html">
-<link rel="alternate" hreflang="x-default" href="https://sandrapudja.com/live-event-production.html">
+<link rel="canonical" href="https://sandrapudja.com/de/live-event-production.php">
+<link rel="alternate" hreflang="en" href="https://sandrapudja.com/live-event-production.php">
+<link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/live-event-production.php">
+<link rel="alternate" hreflang="x-default" href="https://sandrapudja.com/live-event-production.php">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Live- & Event-Produktion | Sandra Pudja — Berlin">
 <meta property="og:description" content="Live-Übertragungen und Event-Produktion in Berlin: Preisverleihungen, Konferenzen, Livestreams, Mehrkamera-Live-Produktionen. Rundown auf die Minute, kein zweiter Take. Sandra Pudja buchen.">
-<meta property="og:url" content="https://sandrapudja.com/de/live-event-production.html">
+<meta property="og:url" content="https://sandrapudja.com/de/live-event-production.php">
 <meta property="og:image" content="https://sandrapudja.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +25,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0c0c0e">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "Live- & Event-Produktion", "serviceType": "Live- & Event-Produktion", "description": "Live-Übertragungen und Event-Produktion in Berlin: Preisverleihungen, Konferenzen, Livestreams, Mehrkamera-Live-Produktionen. Rundown auf die Minute, kein zweiter Take. Sandra Pudja buchen.", "url": "https://sandrapudja.com/de/live-event-production.html", "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "Croatia"}], "availableLanguage": ["en", "de", "hr"], "provider": {"@type": "Person", "name": "Sandra Pudja", "jobTitle": "TV producer", "email": "hello@sandrapudja.com", "url": "https://sandrapudja.com", "address": {"@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE"}, "image": "https://sandrapudja.com/sandra.jpg"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Machst du Stream und Saal?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Stream, Saal und jeder TV-Feed werden aus einem Rundown produziert, damit sie nie auseinanderlaufen."}}, {"@type": "Question", "name": "Welche Eventgröße?", "acceptedAnswer": {"@type": "Answer", "text": "Von der Keynote mit 200 Plätzen und zwei Kameras bis zur Preisverleihung mit 2.000 Plätzen und Ü-Wagen."}}, {"@type": "Question", "name": "Bringst du eine Crew mit?", "acceptedAnswer": {"@type": "Answer", "text": "Kann sie, oder sie arbeitet mit der Crew, die du schon hast. Berliner, Zagreber und Wiener Crews sind in ihrem Telefon."}}, {"@type": "Question", "name": "Hybride Events mit zugeschalteten Speakern?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, inklusive Tech-Checks für Remote-Speaker und einer Backup-Aufzeichnung für jeden Remote-Slot."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sandra Pudja", "item": "https://sandrapudja.com/de/"}, {"@type": "ListItem", "position": 2, "name": "Live- & Event-Produktion", "item": "https://sandrapudja.com/de/live-event-production.html"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "Live- & Event-Produktion", "serviceType": "Live- & Event-Produktion", "description": "Live-Übertragungen und Event-Produktion in Berlin: Preisverleihungen, Konferenzen, Livestreams, Mehrkamera-Live-Produktionen. Rundown auf die Minute, kein zweiter Take. Sandra Pudja buchen.", "url": "https://sandrapudja.com/de/live-event-production.php", "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "Croatia"}], "availableLanguage": ["en", "de", "hr"], "provider": {"@type": "Person", "name": "Sandra Pudja", "jobTitle": "TV producer", "email": "hello@sandrapudja.com", "url": "https://sandrapudja.com", "address": {"@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE"}, "image": "https://sandrapudja.com/sandra.jpg"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Machst du Stream und Saal?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Stream, Saal und jeder TV-Feed werden aus einem Rundown produziert, damit sie nie auseinanderlaufen."}}, {"@type": "Question", "name": "Welche Eventgröße?", "acceptedAnswer": {"@type": "Answer", "text": "Von der Keynote mit 200 Plätzen und zwei Kameras bis zur Preisverleihung mit 2.000 Plätzen und Ü-Wagen."}}, {"@type": "Question", "name": "Bringst du eine Crew mit?", "acceptedAnswer": {"@type": "Answer", "text": "Kann sie, oder sie arbeitet mit der Crew, die du schon hast. Berliner, Zagreber und Wiener Crews sind in ihrem Telefon."}}, {"@type": "Question", "name": "Hybride Events mit zugeschalteten Speakern?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, inklusive Tech-Checks für Remote-Speaker und einer Backup-Aufzeichnung für jeden Remote-Slot."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sandra Pudja", "item": "https://sandrapudja.com/de/"}, {"@type": "ListItem", "position": 2, "name": "Live- & Event-Produktion", "item": "https://sandrapudja.com/de/live-event-production.php"}]}]</script>
 <style>
 :root{--bg:#0c0c0e;--bg-2:#111114;--panel:#17171b;--line:#26262c;--line-strong:#3a3a42;--fg:#ecebe6;--muted:#8c8b86;--rec:#ff3b30;--tally:#f2b544;--font-sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--font-mono:"IBM Plex Mono",Menlo,monospace;--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));color-scheme:dark}
 *{box-sizing:border-box}
@@ -100,18 +101,18 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(56px + env(safe-
 </head>
 <body>
 <header class="head"><div class="wrap nav">
-  <a class="brand" href="/de/index.html"><span class="rec-dot"></span><span>Sandra Pudja</span></a>
-  <nav class="links"><a href="../index.html#services">Was sie macht</a><a href="../index.html#way">The Sandra way</a><a href="../index.html#booking-sec">Booking</a></nav>
-  <div class="right"><a class="lang" href="../live-event-production.html" hreflang="en"><span class="rec-dot" style="animation:none"></span>EN</a><a class="pill" href="../index.html#booking-sec">Booking</a></div>
+  <a class="brand" href="/de/"><span class="rec-dot"></span><span>Sandra Pudja</span></a>
+  <nav class="links"><a href="/de/#services">Was sie macht</a><a href="/de/#way">The Sandra way</a><a href="/de/#booking-sec">Booking</a></nav>
+  <div class="right"><a class="lang" href="../live-event-production.php" hreflang="en"><span class="rec-dot" style="animation:none"></span>EN</a><a class="pill" href="/de/#booking-sec">Booking</a></div>
 </div></header>
 <main>
-<div class="wrap crumbs mono"><a href="/de/index.html">Start</a><span>/</span><a href="../index.html#services">Was sie macht</a><span>/</span><span style="color:var(--fg)">Live- & Event-Produktion</span></div>
+<div class="wrap crumbs mono"><a href="/de/">Start</a><span>/</span><a href="/de/#services">Was sie macht</a><span>/</span><span style="color:var(--fg)">Live- & Event-Produktion</span></div>
 <section class="wrap hero">
   <div>
     <div class="k"><span class="mono">CAM 2</span><i></i><span class="mono">Live- & Event-Produktion</span></div>
     <h1>Live- und Event-Produktion. Es gibt keinen zweiten Take.</h1>
     <p class="lede">Preisverleihungen, Konferenzen, Livestreams und hybride Events, produziert für den einen Moment, in dem REC angeht und anbleibt.</p>
-    <div class="ctas"><a class="btn primary" href="../index.html#booking-sec">Sandra buchen</a><a class="btn" href="../index.html#services">Alle Leistungen</a></div>
+    <div class="ctas"><a class="btn primary" href="/de/#booking-sec">Sandra buchen</a><a class="btn" href="/de/#services">Alle Leistungen</a></div>
   </div>
   <div class="photo"><img src="../sandra.jpg" alt="Sandra Pudja, TV producer, Berlin"><span class="tag"><span class="rec-dot"></span>CAM 2</span></div>
 </section>
@@ -119,15 +120,15 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(56px + env(safe-
 <section class="sec"><div class="wrap"><h2>Das bekommst du</h2><div class="grid3"><div class="card"><span class="mono">01</span><h3>Rundown und Timing</h3><p>Ein Rundown auf die Minute mit Verantwortlichen, Cues und den Kürzungen für den Fall, dass es spät wird.</p></div><div class="card"><span class="mono">02</span><h3>Technische Koordination</h3><p>Ü-Wagen, Streaming, Licht, Ton und Grafik arbeiten nach einem Plan.</p></div><div class="card"><span class="mono">03</span><h3>Moderation und Speaker</h3><p>Briefings, Proben, Cue Cards und eine ruhige Stimme im Ohr.</p></div><div class="card"><span class="mono">04</span><h3>Regie am Abend</h3><p>Sandra ruft die Show, oder sitzt neben der Regie und hält die Zeit.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><h2>So läuft es</h2><div class="grid3"><div class="card"><h3>1. Begehung</h3><p>Location, Technik und Ablauf vor Ort, vier bis sechs Wochen vorher.</p></div><div class="card"><h3>2. Probe</h3><p>Eine komplette technische Probe am Vortag. Jeder Cue getestet.</p></div><div class="card"><h3>3. Show</h3><p>Einlass, Countdown, auf Sendung. Danach: Wrap-Report mit dem, was nächstes Jahr anders wird.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><h2>Häufige Fragen</h2><div class="faq"><details><summary>Machst du Stream und Saal?</summary><p>Ja. Stream, Saal und jeder TV-Feed werden aus einem Rundown produziert, damit sie nie auseinanderlaufen.</p></details><details><summary>Welche Eventgröße?</summary><p>Von der Keynote mit 200 Plätzen und zwei Kameras bis zur Preisverleihung mit 2.000 Plätzen und Ü-Wagen.</p></details><details><summary>Bringst du eine Crew mit?</summary><p>Kann sie, oder sie arbeitet mit der Crew, die du schon hast. Berliner, Zagreber und Wiener Crews sind in ihrem Telefon.</p></details><details><summary>Hybride Events mit zugeschalteten Speakern?</summary><p>Ja, inklusive Tech-Checks für Remote-Speaker und einer Backup-Aufzeichnung für jeden Remote-Slot.</p></details></div></div></section>
-<section class="sec"><div class="wrap"><div class="cta"><div><h3>Klingt nach deiner nächsten Produktion?</h3><p>Schreib drei Sätze darüber, was du drehst und wann. Sandra antwortet innerhalb von 48 Stunden.</p></div><a class="btn primary" href="../index.html#booking-sec">Sandra buchen</a></div></div></section>
-<section class="sec"><div class="wrap"><h2 style="font-size:18px">Verwandt</h2><div class="related"><a href="tv-production.html">TV-Produktion</a><a href="shoot-organisation.html">Drehorganisation & Logistik</a><a href="production-consulting.html">Beratung & Mentoring</a><a href="tv-producer-berlin.html">TV-Produzentin in Berlin</a></div></div></section>
+<section class="sec"><div class="wrap"><div class="cta"><div><h3>Klingt nach deiner nächsten Produktion?</h3><p>Schreib drei Sätze darüber, was du drehst und wann. Sandra antwortet innerhalb von 48 Stunden.</p></div><a class="btn primary" href="/de/#booking-sec">Sandra buchen</a></div></div></section>
+<section class="sec"><div class="wrap"><h2 style="font-size:18px">Verwandt</h2><div class="related"><a href="tv-production.php">TV-Produktion</a><a href="shoot-organisation.php">Drehorganisation & Logistik</a><a href="production-consulting.php">Beratung & Mentoring</a><a href="tv-producer-berlin.php">TV-Produzentin in Berlin</a></div></div></section>
 </main>
 <footer><div class="wrap">
   <div class="fgrid">
-    <div><h4>Leistungen</h4><ul><li><a href="tv-production.html">TV-Produktion</a></li><li><a href="live-event-production.html">Live- & Event-Produktion</a></li><li><a href="shoot-organisation.html">Drehorganisation & Logistik</a></li><li><a href="production-consulting.html">Beratung & Mentoring</a></li></ul></div>
-    <div><h4>Lokal</h4><ul><li><a href="tv-producer-berlin.html">TV-Produzentin in Berlin</a></li></ul></div>
+    <div><h4>Leistungen</h4><ul><li><a href="tv-production.php">TV-Produktion</a></li><li><a href="live-event-production.php">Live- & Event-Produktion</a></li><li><a href="shoot-organisation.php">Drehorganisation & Logistik</a></li><li><a href="production-consulting.php">Beratung & Mentoring</a></li></ul></div>
+    <div><h4>Lokal</h4><ul><li><a href="tv-producer-berlin.php">TV-Produzentin in Berlin</a></li></ul></div>
     <div><h4>Kontakt</h4><ul><li><a href="mailto:hello@sandrapudja.com">hello@sandrapudja.com</a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
-    <div><h4>Sprache</h4><ul><li><a href="/de/index.html">English</a></li><li><a href="/index.html">Deutsch</a></li></ul></div>
+    <div><h4>Sprache</h4><ul><li><a href="/de/">English</a></li><li><a href="/">Deutsch</a></li></ul></div>
   </div>
   <div class="fbot"><span class="mono">End of transmission · 2026</span><span class="mono">Sandra Pudja · TV-Produzentin · Berlin</span></div>
 </div></footer>

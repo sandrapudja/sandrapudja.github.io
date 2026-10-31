@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/../_gate.php'; ?>
 <!doctype html>
 <html lang="de">
 <head>
@@ -5,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Produktionsberatung & Mentoring für Produzenten | Sandra Pudja</title>
 <meta name="description" content="Workflow-Beratung für Produktionsteams und Eins-zu-eins-Mentoring für junge Produzentinnen und Produzenten in Berlin. Weniger Chaos, mehr Sendungen. Sandra Pudja buchen.">
-<link rel="canonical" href="https://sandrapudja.com/de/production-consulting.html">
-<link rel="alternate" hreflang="en" href="https://sandrapudja.com/production-consulting.html">
-<link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/production-consulting.html">
-<link rel="alternate" hreflang="x-default" href="https://sandrapudja.com/production-consulting.html">
+<link rel="canonical" href="https://sandrapudja.com/de/production-consulting.php">
+<link rel="alternate" hreflang="en" href="https://sandrapudja.com/production-consulting.php">
+<link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/production-consulting.php">
+<link rel="alternate" hreflang="x-default" href="https://sandrapudja.com/production-consulting.php">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Produktionsberatung & Mentoring für Produzenten | Sandra Pudja">
 <meta property="og:description" content="Workflow-Beratung für Produktionsteams und Eins-zu-eins-Mentoring für junge Produzentinnen und Produzenten in Berlin. Weniger Chaos, mehr Sendungen. Sandra Pudja buchen.">
-<meta property="og:url" content="https://sandrapudja.com/de/production-consulting.html">
+<meta property="og:url" content="https://sandrapudja.com/de/production-consulting.php">
 <meta property="og:image" content="https://sandrapudja.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +25,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0c0c0e">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "Beratung & Mentoring", "serviceType": "Beratung & Mentoring", "description": "Workflow-Beratung für Produktionsteams und Eins-zu-eins-Mentoring für junge Produzentinnen und Produzenten in Berlin. Weniger Chaos, mehr Sendungen. Sandra Pudja buchen.", "url": "https://sandrapudja.com/de/production-consulting.html", "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "Croatia"}], "availableLanguage": ["en", "de", "hr"], "provider": {"@type": "Person", "name": "Sandra Pudja", "jobTitle": "TV producer", "email": "hello@sandrapudja.com", "url": "https://sandrapudja.com", "address": {"@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE"}, "image": "https://sandrapudja.com/sandra.jpg"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Für wen ist das Mentoring?", "acceptedAnswer": {"@type": "Answer", "text": "Junge Produzentinnen und Produzenten, Produktionsassistenzen auf dem Weg nach oben und Gründer, die ihren eigenen Content produzieren."}}, {"@type": "Question", "name": "Remote oder vor Ort?", "acceptedAnswer": {"@type": "Answer", "text": "Beides. Vor Ort in Berlin, remote überall in Europa."}}, {"@type": "Question", "name": "Wie lange dauert ein Workflow-Review?", "acceptedAnswer": {"@type": "Answer", "text": "Zwei bis drei Wochen, inklusive eines kompletten Produktionszyklus."}}, {"@type": "Question", "name": "Übernimmst du auch die Produktion?", "acceptedAnswer": {"@type": "Answer", "text": "Wenn nötig ja, aber das Ziel ist, dass du sie beim nächsten Mal nicht brauchst."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sandra Pudja", "item": "https://sandrapudja.com/de/"}, {"@type": "ListItem", "position": 2, "name": "Beratung & Mentoring", "item": "https://sandrapudja.com/de/production-consulting.html"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "Beratung & Mentoring", "serviceType": "Beratung & Mentoring", "description": "Workflow-Beratung für Produktionsteams und Eins-zu-eins-Mentoring für junge Produzentinnen und Produzenten in Berlin. Weniger Chaos, mehr Sendungen. Sandra Pudja buchen.", "url": "https://sandrapudja.com/de/production-consulting.php", "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "Croatia"}], "availableLanguage": ["en", "de", "hr"], "provider": {"@type": "Person", "name": "Sandra Pudja", "jobTitle": "TV producer", "email": "hello@sandrapudja.com", "url": "https://sandrapudja.com", "address": {"@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE"}, "image": "https://sandrapudja.com/sandra.jpg"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Für wen ist das Mentoring?", "acceptedAnswer": {"@type": "Answer", "text": "Junge Produzentinnen und Produzenten, Produktionsassistenzen auf dem Weg nach oben und Gründer, die ihren eigenen Content produzieren."}}, {"@type": "Question", "name": "Remote oder vor Ort?", "acceptedAnswer": {"@type": "Answer", "text": "Beides. Vor Ort in Berlin, remote überall in Europa."}}, {"@type": "Question", "name": "Wie lange dauert ein Workflow-Review?", "acceptedAnswer": {"@type": "Answer", "text": "Zwei bis drei Wochen, inklusive eines kompletten Produktionszyklus."}}, {"@type": "Question", "name": "Übernimmst du auch die Produktion?", "acceptedAnswer": {"@type": "Answer", "text": "Wenn nötig ja, aber das Ziel ist, dass du sie beim nächsten Mal nicht brauchst."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sandra Pudja", "item": "https://sandrapudja.com/de/"}, {"@type": "ListItem", "position": 2, "name": "Beratung & Mentoring", "item": "https://sandrapudja.com/de/production-consulting.php"}]}]</script>
 <style>
 :root{--bg:#0c0c0e;--bg-2:#111114;--panel:#17171b;--line:#26262c;--line-strong:#3a3a42;--fg:#ecebe6;--muted:#8c8b86;--rec:#ff3b30;--tally:#f2b544;--font-sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--font-mono:"IBM Plex Mono",Menlo,monospace;--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));color-scheme:dark}
 *{box-sizing:border-box}
@@ -100,18 +101,18 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(56px + env(safe-
 </head>
 <body>
 <header class="head"><div class="wrap nav">
-  <a class="brand" href="/de/index.html"><span class="rec-dot"></span><span>Sandra Pudja</span></a>
-  <nav class="links"><a href="../index.html#services">Was sie macht</a><a href="../index.html#way">The Sandra way</a><a href="../index.html#booking-sec">Booking</a></nav>
-  <div class="right"><a class="lang" href="../production-consulting.html" hreflang="en"><span class="rec-dot" style="animation:none"></span>EN</a><a class="pill" href="../index.html#booking-sec">Booking</a></div>
+  <a class="brand" href="/de/"><span class="rec-dot"></span><span>Sandra Pudja</span></a>
+  <nav class="links"><a href="/de/#services">Was sie macht</a><a href="/de/#way">The Sandra way</a><a href="/de/#booking-sec">Booking</a></nav>
+  <div class="right"><a class="lang" href="../production-consulting.php" hreflang="en"><span class="rec-dot" style="animation:none"></span>EN</a><a class="pill" href="/de/#booking-sec">Booking</a></div>
 </div></header>
 <main>
-<div class="wrap crumbs mono"><a href="/de/index.html">Start</a><span>/</span><a href="../index.html#services">Was sie macht</a><span>/</span><span style="color:var(--fg)">Beratung & Mentoring</span></div>
+<div class="wrap crumbs mono"><a href="/de/">Start</a><span>/</span><a href="/de/#services">Was sie macht</a><span>/</span><span style="color:var(--fg)">Beratung & Mentoring</span></div>
 <section class="wrap hero">
   <div>
     <div class="k"><span class="mono">CAM 4</span><i></i><span class="mono">Beratung & Mentoring</span></div>
     <h1>Beratung und Mentoring. Weniger Chaos, mehr Sendungen.</h1>
     <p class="lede">Für Produktionsfirmen, die einen Prozess brauchen, und für Produzentinnen und Produzenten, die den vorhandenen noch lernen.</p>
-    <div class="ctas"><a class="btn primary" href="../index.html#booking-sec">Sandra buchen</a><a class="btn" href="../index.html#services">Alle Leistungen</a></div>
+    <div class="ctas"><a class="btn primary" href="/de/#booking-sec">Sandra buchen</a><a class="btn" href="/de/#services">Alle Leistungen</a></div>
   </div>
   <div class="photo"><img src="../sandra.jpg" alt="Sandra Pudja, TV producer, Berlin"><span class="tag"><span class="rec-dot"></span>CAM 4</span></div>
 </section>
@@ -119,15 +120,15 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(56px + env(safe-
 <section class="sec"><div class="wrap"><h2>Das bekommst du</h2><div class="grid3"><div class="card"><span class="mono">01</span><h3>Workflow-Review</h3><p>Zwei Wochen in deinem Team, dann eine schriftliche Karte davon, was bricht und warum.</p></div><div class="card"><span class="mono">02</span><h3>Prozessaufbau</h3><p>Rundown-, Call-Sheet-, Budget- und Übergabe-Vorlagen, eingerichtet in euren Tools.</p></div><div class="card"><span class="mono">03</span><h3>Mentoring</h3><p>Sechs Sessions, eine Person, eine echte Produktion, jeder Schritt.</p></div><div class="card"><span class="mono">04</span><h3>Bereitschaft</h3><p>Eine Produzentin im Telefon für die Woche vor einer großen Show.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><h2>So läuft es</h2><div class="grid3"><div class="card"><h3>1. Diagnose</h3><p>Eine Produktion beobachtet, vom Briefing bis zum Wrap.</p></div><div class="card"><h3>2. Aufbau</h3><p>Vorlagen und ein Prozess, auf den sich das Team einigt, nicht einer, der verordnet wird.</p></div><div class="card"><h3>3. Betrieb</h3><p>Das Team fährt die nächste Show im neuen Prozess. Sandra schaut zu, dann tritt sie zurück.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><h2>Häufige Fragen</h2><div class="faq"><details><summary>Für wen ist das Mentoring?</summary><p>Junge Produzentinnen und Produzenten, Produktionsassistenzen auf dem Weg nach oben und Gründer, die ihren eigenen Content produzieren.</p></details><details><summary>Remote oder vor Ort?</summary><p>Beides. Vor Ort in Berlin, remote überall in Europa.</p></details><details><summary>Wie lange dauert ein Workflow-Review?</summary><p>Zwei bis drei Wochen, inklusive eines kompletten Produktionszyklus.</p></details><details><summary>Übernimmst du auch die Produktion?</summary><p>Wenn nötig ja, aber das Ziel ist, dass du sie beim nächsten Mal nicht brauchst.</p></details></div></div></section>
-<section class="sec"><div class="wrap"><div class="cta"><div><h3>Klingt nach deiner nächsten Produktion?</h3><p>Schreib drei Sätze darüber, was du drehst und wann. Sandra antwortet innerhalb von 48 Stunden.</p></div><a class="btn primary" href="../index.html#booking-sec">Sandra buchen</a></div></div></section>
-<section class="sec"><div class="wrap"><h2 style="font-size:18px">Verwandt</h2><div class="related"><a href="tv-production.html">TV-Produktion</a><a href="live-event-production.html">Live- & Event-Produktion</a><a href="shoot-organisation.html">Drehorganisation & Logistik</a><a href="tv-producer-berlin.html">TV-Produzentin in Berlin</a></div></div></section>
+<section class="sec"><div class="wrap"><div class="cta"><div><h3>Klingt nach deiner nächsten Produktion?</h3><p>Schreib drei Sätze darüber, was du drehst und wann. Sandra antwortet innerhalb von 48 Stunden.</p></div><a class="btn primary" href="/de/#booking-sec">Sandra buchen</a></div></div></section>
+<section class="sec"><div class="wrap"><h2 style="font-size:18px">Verwandt</h2><div class="related"><a href="tv-production.php">TV-Produktion</a><a href="live-event-production.php">Live- & Event-Produktion</a><a href="shoot-organisation.php">Drehorganisation & Logistik</a><a href="tv-producer-berlin.php">TV-Produzentin in Berlin</a></div></div></section>
 </main>
 <footer><div class="wrap">
   <div class="fgrid">
-    <div><h4>Leistungen</h4><ul><li><a href="tv-production.html">TV-Produktion</a></li><li><a href="live-event-production.html">Live- & Event-Produktion</a></li><li><a href="shoot-organisation.html">Drehorganisation & Logistik</a></li><li><a href="production-consulting.html">Beratung & Mentoring</a></li></ul></div>
-    <div><h4>Lokal</h4><ul><li><a href="tv-producer-berlin.html">TV-Produzentin in Berlin</a></li></ul></div>
+    <div><h4>Leistungen</h4><ul><li><a href="tv-production.php">TV-Produktion</a></li><li><a href="live-event-production.php">Live- & Event-Produktion</a></li><li><a href="shoot-organisation.php">Drehorganisation & Logistik</a></li><li><a href="production-consulting.php">Beratung & Mentoring</a></li></ul></div>
+    <div><h4>Lokal</h4><ul><li><a href="tv-producer-berlin.php">TV-Produzentin in Berlin</a></li></ul></div>
     <div><h4>Kontakt</h4><ul><li><a href="mailto:hello@sandrapudja.com">hello@sandrapudja.com</a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
-    <div><h4>Sprache</h4><ul><li><a href="/de/index.html">English</a></li><li><a href="/index.html">Deutsch</a></li></ul></div>
+    <div><h4>Sprache</h4><ul><li><a href="/de/">English</a></li><li><a href="/">Deutsch</a></li></ul></div>
   </div>
   <div class="fbot"><span class="mono">End of transmission · 2026</span><span class="mono">Sandra Pudja · TV-Produzentin · Berlin</span></div>
 </div></footer>

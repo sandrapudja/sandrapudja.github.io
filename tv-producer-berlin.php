@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/_gate.php'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TV Producer in Berlin — Sandra Pudja | Studio, Live, Location</title>
 <meta name="description" content="Looking for a freelance TV producer in Berlin? Sandra Pudja produces studio shows, live events and location shoots in English, German and Croatian. Available for broadcasters, agencies and brands.">
-<link rel="canonical" href="https://sandrapudja.com/tv-producer-berlin.html">
-<link rel="alternate" hreflang="en" href="https://sandrapudja.com/tv-producer-berlin.html">
-<link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/tv-producer-berlin.html">
-<link rel="alternate" hreflang="x-default" href="https://sandrapudja.com/tv-producer-berlin.html">
+<link rel="canonical" href="https://sandrapudja.com/tv-producer-berlin.php">
+<link rel="alternate" hreflang="en" href="https://sandrapudja.com/tv-producer-berlin.php">
+<link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/tv-producer-berlin.php">
+<link rel="alternate" hreflang="x-default" href="https://sandrapudja.com/tv-producer-berlin.php">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TV Producer in Berlin — Sandra Pudja | Studio, Live, Location">
 <meta property="og:description" content="Looking for a freelance TV producer in Berlin? Sandra Pudja produces studio shows, live events and location shoots in English, German and Croatian. Available for broadcasters, agencies and brands.">
-<meta property="og:url" content="https://sandrapudja.com/tv-producer-berlin.html">
+<meta property="og:url" content="https://sandrapudja.com/tv-producer-berlin.php">
 <meta property="og:image" content="https://sandrapudja.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +25,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0c0c0e">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "TV producer in Berlin", "serviceType": "TV producer in Berlin", "description": "Looking for a freelance TV producer in Berlin? Sandra Pudja produces studio shows, live events and location shoots in English, German and Croatian. Available for broadcasters, agencies and brands.", "url": "https://sandrapudja.com/tv-producer-berlin.html", "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "Croatia"}], "availableLanguage": ["en", "de", "hr"], "provider": {"@type": "Person", "name": "Sandra Pudja", "jobTitle": "TV producer", "email": "hello@sandrapudja.com", "url": "https://sandrapudja.com", "address": {"@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE"}, "image": "https://sandrapudja.com/sandra.jpg"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are you available on short notice?", "acceptedAnswer": {"@type": "Answer", "text": "Sometimes. For live and studio work, ask six weeks ahead; for logistics rescue, call today."}}, {"@type": "Question", "name": "Do you work outside Berlin?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: Germany, Austria, Croatia and the rest of Europe."}}, {"@type": "Question", "name": "Freelance or through an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Freelance, invoiced directly, or through your production company's existing framework."}}, {"@type": "Question", "name": "Day rate or project fee?", "acceptedAnswer": {"@type": "Answer", "text": "Both. Day rate for production management, project fee for full productions."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sandra Pudja", "item": "https://sandrapudja.com/"}, {"@type": "ListItem", "position": 2, "name": "TV producer in Berlin", "item": "https://sandrapudja.com/tv-producer-berlin.html"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "TV producer in Berlin", "serviceType": "TV producer in Berlin", "description": "Looking for a freelance TV producer in Berlin? Sandra Pudja produces studio shows, live events and location shoots in English, German and Croatian. Available for broadcasters, agencies and brands.", "url": "https://sandrapudja.com/tv-producer-berlin.php", "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "Croatia"}], "availableLanguage": ["en", "de", "hr"], "provider": {"@type": "Person", "name": "Sandra Pudja", "jobTitle": "TV producer", "email": "hello@sandrapudja.com", "url": "https://sandrapudja.com", "address": {"@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE"}, "image": "https://sandrapudja.com/sandra.jpg"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are you available on short notice?", "acceptedAnswer": {"@type": "Answer", "text": "Sometimes. For live and studio work, ask six weeks ahead; for logistics rescue, call today."}}, {"@type": "Question", "name": "Do you work outside Berlin?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: Germany, Austria, Croatia and the rest of Europe."}}, {"@type": "Question", "name": "Freelance or through an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Freelance, invoiced directly, or through your production company's existing framework."}}, {"@type": "Question", "name": "Day rate or project fee?", "acceptedAnswer": {"@type": "Answer", "text": "Both. Day rate for production management, project fee for full productions."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sandra Pudja", "item": "https://sandrapudja.com/"}, {"@type": "ListItem", "position": 2, "name": "TV producer in Berlin", "item": "https://sandrapudja.com/tv-producer-berlin.php"}]}]</script>
 <style>
 :root{--bg:#0c0c0e;--bg-2:#111114;--panel:#17171b;--line:#26262c;--line-strong:#3a3a42;--fg:#ecebe6;--muted:#8c8b86;--rec:#ff3b30;--tally:#f2b544;--font-sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--font-mono:"IBM Plex Mono",Menlo,monospace;--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));color-scheme:dark}
 *{box-sizing:border-box}
@@ -100,34 +101,34 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(56px + env(safe-
 </head>
 <body>
 <header class="head"><div class="wrap nav">
-  <a class="brand" href="/index.html"><span class="rec-dot"></span><span>Sandra Pudja</span></a>
-  <nav class="links"><a href="index.html#services">What she does</a><a href="index.html#way">The Sandra way</a><a href="index.html#booking-sec">Booking</a></nav>
-  <div class="right"><a class="lang" href="de/tv-producer-berlin.html" hreflang="de"><span class="rec-dot" style="animation:none"></span>DE</a><a class="pill" href="index.html#booking-sec">Booking</a></div>
+  <a class="brand" href="/"><span class="rec-dot"></span><span>Sandra Pudja</span></a>
+  <nav class="links"><a href="/#services">What she does</a><a href="/#way">The Sandra way</a><a href="/#booking-sec">Booking</a></nav>
+  <div class="right"><a class="lang" href="de/tv-producer-berlin.php" hreflang="de"><span class="rec-dot" style="animation:none"></span>DE</a><a class="pill" href="/#booking-sec">Booking</a></div>
 </div></header>
 <main>
-<div class="wrap crumbs mono"><a href="/index.html">Home</a><span>/</span><a href="index.html#services">What she does</a><span>/</span><span style="color:var(--fg)">TV producer in Berlin</span></div>
+<div class="wrap crumbs mono"><a href="/">Home</a><span>/</span><a href="/#services">What she does</a><span>/</span><span style="color:var(--fg)">TV producer in Berlin</span></div>
 <section class="wrap hero">
   <div>
     <div class="k"><span class="mono">PGM</span><i></i><span class="mono">TV producer in Berlin</span></div>
     <h1>TV producer in Berlin</h1>
     <p class="lede">Freelance producer for studio, live and location productions. Based in Berlin, working in English, German and Croatian.</p>
-    <div class="ctas"><a class="btn primary" href="index.html#booking-sec">Book Sandra</a><a class="btn" href="index.html#services">See all services</a></div>
+    <div class="ctas"><a class="btn primary" href="/#booking-sec">Book Sandra</a><a class="btn" href="/#services">See all services</a></div>
   </div>
   <div class="photo"><img src="sandra.jpg" alt="Sandra Pudja, TV producer, Berlin"><span class="tag"><span class="rec-dot"></span>PGM</span></div>
 </section>
-<section class="sec"><div class="wrap"><div class="prose"><p>Berlin has studios, crews and an audience for almost every format. What productions here most often lack is the one person who holds the plan. <strong>Sandra Pudja is a freelance TV producer based in Berlin</strong>, available for broadcasters, production companies, agencies and brands for studio shows, live events, branded content and location shoots in Berlin, Brandenburg and across Germany.</p><p>She works in three languages, which matters in this city: English-language productions for international teams, German-language studio and live work for broadcasters and corporate clients, and Croatian for productions with a connection to the Adriatic region.</p><p>Four things she does, and does so that nobody notices: <a href="tv-production.html">TV production</a>, <a href="live-event-production.html">live and event production</a>, <a href="shoot-organisation.html">shoot organisation and logistics</a>, and <a href="production-consulting.html">consulting and mentoring</a> for production teams.</p></div></div></section>
+<section class="sec"><div class="wrap"><div class="prose"><p>Berlin has studios, crews and an audience for almost every format. What productions here most often lack is the one person who holds the plan. <strong>Sandra Pudja is a freelance TV producer based in Berlin</strong>, available for broadcasters, production companies, agencies and brands for studio shows, live events, branded content and location shoots in Berlin, Brandenburg and across Germany.</p><p>She works in three languages, which matters in this city: English-language productions for international teams, German-language studio and live work for broadcasters and corporate clients, and Croatian for productions with a connection to the Adriatic region.</p><p>Four things she does, and does so that nobody notices: <a href="tv-production.php">TV production</a>, <a href="live-event-production.php">live and event production</a>, <a href="shoot-organisation.php">shoot organisation and logistics</a>, and <a href="production-consulting.php">consulting and mentoring</a> for production teams.</p></div></div></section>
 <section class="sec"><div class="wrap"><h2>What you get</h2><div class="grid3"><div class="card"><span class="mono">01</span><h3>Studio</h3><p>Studio shows and magazines in Berlin studios, from Adlershof to Kreuzberg.</p></div><div class="card"><span class="mono">02</span><h3>Live</h3><p>Award shows, conferences and streams in Berlin venues.</p></div><div class="card"><span class="mono">03</span><h3>Location</h3><p>Shoots in Berlin, Brandenburg and on the road, with crews she has worked with for years.</p></div><div class="card"><span class="mono">04</span><h3>Languages</h3><p>English, German, Croatian. Call sheets in whichever the crew reads fastest.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><h2>How it works</h2><div class="grid3"><div class="card"><h3>1. Call</h3><p>30 minutes about what you are making and when.</p></div><div class="card"><h3>2. Plan</h3><p>Rundown, schedule and estimate within a week.</p></div><div class="card"><h3>3. Produce</h3><p>Sandra runs it. You watch the monitor.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><h2>Questions people ask</h2><div class="faq"><details><summary>Are you available on short notice?</summary><p>Sometimes. For live and studio work, ask six weeks ahead; for logistics rescue, call today.</p></details><details><summary>Do you work outside Berlin?</summary><p>Yes: Germany, Austria, Croatia and the rest of Europe.</p></details><details><summary>Freelance or through an agency?</summary><p>Freelance, invoiced directly, or through your production company's existing framework.</p></details><details><summary>Day rate or project fee?</summary><p>Both. Day rate for production management, project fee for full productions.</p></details></div></div></section>
-<section class="sec"><div class="wrap"><div class="cta"><div><h3>Sounds like your next production?</h3><p>Write three sentences about what you are shooting and when. Sandra replies within 48 hours.</p></div><a class="btn primary" href="index.html#booking-sec">Book Sandra</a></div></div></section>
-<section class="sec"><div class="wrap"><h2 style="font-size:18px">Related</h2><div class="related"><a href="tv-production.html">TV production</a><a href="live-event-production.html">Live & event production</a><a href="shoot-organisation.html">Shoot organisation & logistics</a><a href="production-consulting.html">Consulting & mentoring</a></div></div></section>
+<section class="sec"><div class="wrap"><div class="cta"><div><h3>Sounds like your next production?</h3><p>Write three sentences about what you are shooting and when. Sandra replies within 48 hours.</p></div><a class="btn primary" href="/#booking-sec">Book Sandra</a></div></div></section>
+<section class="sec"><div class="wrap"><h2 style="font-size:18px">Related</h2><div class="related"><a href="tv-production.php">TV production</a><a href="live-event-production.php">Live & event production</a><a href="shoot-organisation.php">Shoot organisation & logistics</a><a href="production-consulting.php">Consulting & mentoring</a></div></div></section>
 </main>
 <footer><div class="wrap">
   <div class="fgrid">
-    <div><h4>Services</h4><ul><li><a href="tv-production.html">TV production</a></li><li><a href="live-event-production.html">Live & event production</a></li><li><a href="shoot-organisation.html">Shoot organisation & logistics</a></li><li><a href="production-consulting.html">Consulting & mentoring</a></li></ul></div>
-    <div><h4>Local</h4><ul><li><a href="tv-producer-berlin.html">TV producer in Berlin</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="tv-production.php">TV production</a></li><li><a href="live-event-production.php">Live & event production</a></li><li><a href="shoot-organisation.php">Shoot organisation & logistics</a></li><li><a href="production-consulting.php">Consulting & mentoring</a></li></ul></div>
+    <div><h4>Local</h4><ul><li><a href="tv-producer-berlin.php">TV producer in Berlin</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="mailto:hello@sandrapudja.com">hello@sandrapudja.com</a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
-    <div><h4>Language</h4><ul><li><a href="/index.html">English</a></li><li><a href="de/index.html">Deutsch</a></li></ul></div>
+    <div><h4>Language</h4><ul><li><a href="/">English</a></li><li><a href="de/">Deutsch</a></li></ul></div>
   </div>
   <div class="fbot"><span class="mono">End of transmission · 2026</span><span class="mono">Sandra Pudja · TV producer · Berlin</span></div>
 </div></footer>

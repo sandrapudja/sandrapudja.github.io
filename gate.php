@@ -1,21 +1,22 @@
 <?php
 // Password gate with curtain — sandrapudja.com
 // Temporary: remove the GATE block in .htaccess to open the site to everyone.
-const TOKEN = '55d7d9864b8a4de9d461dd4357da6428';
-const ANSWER = 'zmaj';            // accepted: Zmaj, zmaj, Zmaj!, zmaj!, ZMAJ …
+if (!defined('SP_TOKEN')) define('SP_TOKEN', '55d7d9864b8a4de9d461dd4357da6428');
+if (!defined('SP_ANSWER')) define('SP_ANSWER', 'zmaj');   // accepted: Zmaj, zmaj, Zmaj!, zmaj!, ZMAJ
 
 header('X-Robots-Tag: noindex, nofollow');
-header('Cache-Control: no-store');
+header('Cache-Control: private, no-store, max-age=0');
+header('Vary: Cookie');
 
 $back = $_SERVER['REQUEST_URI'] ?? '/';
-if (!is_string($back) || $back === '' || $back[0] !== '/' || str_starts_with($back, '//') || str_starts_with($back, '/gate.php')) $back = '/';
+if (!is_string($back) || $back === '' || $back[0] !== '/' || substr($back, 0, 2) === '//' || strpos($back, '/gate.php') === 0) $back = '/';
 
 function norm($s){ $s = trim((string)$s); $s = function_exists('mb_strtolower') ? mb_strtolower($s, 'UTF-8') : strtolower($s); return rtrim($s, "! \t"); }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $ok = hash_equals(ANSWER, norm($_POST['pw'] ?? ''));
+  $ok = hash_equals(SP_ANSWER, norm($_POST['pw'] ?? ''));
   if ($ok) {
-    setcookie('sp_access', TOKEN, ['expires'=>time()+60*60*24*90, 'path'=>'/', 'secure'=>true, 'httponly'=>true, 'samesite'=>'Lax']);
+    header('Set-Cookie: sp_access=' . SP_TOKEN . '; Expires=' . gmdate('D, d M Y H:i:s', time()+60*60*24*90) . ' GMT; Max-Age=' . (60*60*24*90) . '; Path=/; Secure; HttpOnly; SameSite=Lax', false);
   } else {
     usleep(600000);
   }

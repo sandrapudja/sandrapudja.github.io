@@ -1,19 +1,18 @@
 # sandrapudja.com — Hostinger
+DirectoryIndex index.php index.html
 RewriteEngine On
 # force https + non-www
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://sandrapudja.com%{REQUEST_URI} [L,R=301]
-# --- GATE (temporary): everything goes to gate.php until the visitor has entered the password.
-# To open the site to everyone, delete this block (down to END GATE) and push.
-RewriteCond %{REQUEST_URI} !^/(gate\.php|og\.jpg|robots\.txt|favicon\.ico)$
-RewriteCond %{HTTP_COOKIE} !(^|;\s*)sp_access=55d7d9864b8a4de9d461dd4357da6428
-RewriteRule ^ /gate.php [L]
-# --- END GATE
-# clean URLs: /tv-production -> tv-production.html
+# old .html links -> .php
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^de/index\.html$ /de/ [R=301,L]
+RewriteRule ^(.+)\.html$ /$1.php [R=301,L]
+# clean URLs: /tv-production -> tv-production.php
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
 # caching
 <IfModule mod_expires.c>
 ExpiresActive On
@@ -22,7 +21,8 @@ ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 <IfModule mod_headers.c>
 <FilesMatch "\.(html|php)$">
-Header set Cache-Control "no-cache, must-revalidate"
+Header set Cache-Control "private, no-store, max-age=0"
+Header merge Vary "Cookie"
 </FilesMatch>
 </IfModule>
 AddDefaultCharset UTF-8

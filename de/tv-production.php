@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/../_gate.php'; ?>
 <!doctype html>
 <html lang="de">
 <head>
@@ -5,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TV-Produktion | Sandra Pudja — TV-Produzentin in Berlin</title>
 <meta name="description" content="Freie TV-Produzentin in Berlin für Studioshows, Magazine und Specials. Von der Formatentwicklung bis zur Ausstrahlung: Drehbuch, Gäste, Set, Regie, Post. Sandra Pudja buchen.">
-<link rel="canonical" href="https://sandrapudja.com/de/tv-production.html">
-<link rel="alternate" hreflang="en" href="https://sandrapudja.com/tv-production.html">
-<link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/tv-production.html">
-<link rel="alternate" hreflang="x-default" href="https://sandrapudja.com/tv-production.html">
+<link rel="canonical" href="https://sandrapudja.com/de/tv-production.php">
+<link rel="alternate" hreflang="en" href="https://sandrapudja.com/tv-production.php">
+<link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/tv-production.php">
+<link rel="alternate" hreflang="x-default" href="https://sandrapudja.com/tv-production.php">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TV-Produktion | Sandra Pudja — TV-Produzentin in Berlin">
 <meta property="og:description" content="Freie TV-Produzentin in Berlin für Studioshows, Magazine und Specials. Von der Formatentwicklung bis zur Ausstrahlung: Drehbuch, Gäste, Set, Regie, Post. Sandra Pudja buchen.">
-<meta property="og:url" content="https://sandrapudja.com/de/tv-production.html">
+<meta property="og:url" content="https://sandrapudja.com/de/tv-production.php">
 <meta property="og:image" content="https://sandrapudja.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +25,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0c0c0e">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "TV-Produktion", "serviceType": "TV-Produktion", "description": "Freie TV-Produzentin in Berlin für Studioshows, Magazine und Specials. Von der Formatentwicklung bis zur Ausstrahlung: Drehbuch, Gäste, Set, Regie, Post. Sandra Pudja buchen.", "url": "https://sandrapudja.com/de/tv-production.html", "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "Croatia"}], "availableLanguage": ["en", "de", "hr"], "provider": {"@type": "Person", "name": "Sandra Pudja", "jobTitle": "TV producer", "email": "hello@sandrapudja.com", "url": "https://sandrapudja.com", "address": {"@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE"}, "image": "https://sandrapudja.com/sandra.jpg"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Produzierst du auf Deutsch?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Sandra arbeitet auf Deutsch, Englisch und Kroatisch und leitet deutschsprachige Studioproduktionen in Berlin."}}, {"@type": "Question", "name": "Arbeitest du mit bestehenden Teams?", "acceptedAnswer": {"@type": "Answer", "text": "Meistens. Sie fügt sich als Produzentin, Line Producer oder Produktionsleiterin in bestehende Sender- oder Agenturteams ein."}}, {"@type": "Question", "name": "Welche Formate sind typisch?", "acceptedAnswer": {"@type": "Answer", "text": "Wöchentliche Studiomagazine, Entertainment- und Award-Specials, Talkformate, Mehrkamera-Branded-Content für Streaming."}}, {"@type": "Question", "name": "Wie früh sollten wir buchen?", "acceptedAnswer": {"@type": "Answer", "text": "Für eine Studioshow sechs bis acht Wochen vor dem ersten Aufzeichnungstag. Für ein einmaliges Special reichen vier Wochen."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sandra Pudja", "item": "https://sandrapudja.com/de/"}, {"@type": "ListItem", "position": 2, "name": "TV-Produktion", "item": "https://sandrapudja.com/de/tv-production.html"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "TV-Produktion", "serviceType": "TV-Produktion", "description": "Freie TV-Produzentin in Berlin für Studioshows, Magazine und Specials. Von der Formatentwicklung bis zur Ausstrahlung: Drehbuch, Gäste, Set, Regie, Post. Sandra Pudja buchen.", "url": "https://sandrapudja.com/de/tv-production.php", "areaServed": [{"@type": "City", "name": "Berlin"}, {"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "Croatia"}], "availableLanguage": ["en", "de", "hr"], "provider": {"@type": "Person", "name": "Sandra Pudja", "jobTitle": "TV producer", "email": "hello@sandrapudja.com", "url": "https://sandrapudja.com", "address": {"@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE"}, "image": "https://sandrapudja.com/sandra.jpg"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Produzierst du auf Deutsch?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Sandra arbeitet auf Deutsch, Englisch und Kroatisch und leitet deutschsprachige Studioproduktionen in Berlin."}}, {"@type": "Question", "name": "Arbeitest du mit bestehenden Teams?", "acceptedAnswer": {"@type": "Answer", "text": "Meistens. Sie fügt sich als Produzentin, Line Producer oder Produktionsleiterin in bestehende Sender- oder Agenturteams ein."}}, {"@type": "Question", "name": "Welche Formate sind typisch?", "acceptedAnswer": {"@type": "Answer", "text": "Wöchentliche Studiomagazine, Entertainment- und Award-Specials, Talkformate, Mehrkamera-Branded-Content für Streaming."}}, {"@type": "Question", "name": "Wie früh sollten wir buchen?", "acceptedAnswer": {"@type": "Answer", "text": "Für eine Studioshow sechs bis acht Wochen vor dem ersten Aufzeichnungstag. Für ein einmaliges Special reichen vier Wochen."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sandra Pudja", "item": "https://sandrapudja.com/de/"}, {"@type": "ListItem", "position": 2, "name": "TV-Produktion", "item": "https://sandrapudja.com/de/tv-production.php"}]}]</script>
 <style>
 :root{--bg:#0c0c0e;--bg-2:#111114;--panel:#17171b;--line:#26262c;--line-strong:#3a3a42;--fg:#ecebe6;--muted:#8c8b86;--rec:#ff3b30;--tally:#f2b544;--font-sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--font-mono:"IBM Plex Mono",Menlo,monospace;--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));color-scheme:dark}
 *{box-sizing:border-box}
@@ -100,18 +101,18 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(56px + env(safe-
 </head>
 <body>
 <header class="head"><div class="wrap nav">
-  <a class="brand" href="/de/index.html"><span class="rec-dot"></span><span>Sandra Pudja</span></a>
-  <nav class="links"><a href="../index.html#services">Was sie macht</a><a href="../index.html#way">The Sandra way</a><a href="../index.html#booking-sec">Booking</a></nav>
-  <div class="right"><a class="lang" href="../tv-production.html" hreflang="en"><span class="rec-dot" style="animation:none"></span>EN</a><a class="pill" href="../index.html#booking-sec">Booking</a></div>
+  <a class="brand" href="/de/"><span class="rec-dot"></span><span>Sandra Pudja</span></a>
+  <nav class="links"><a href="/de/#services">Was sie macht</a><a href="/de/#way">The Sandra way</a><a href="/de/#booking-sec">Booking</a></nav>
+  <div class="right"><a class="lang" href="../tv-production.php" hreflang="en"><span class="rec-dot" style="animation:none"></span>EN</a><a class="pill" href="/de/#booking-sec">Booking</a></div>
 </div></header>
 <main>
-<div class="wrap crumbs mono"><a href="/de/index.html">Start</a><span>/</span><a href="../index.html#services">Was sie macht</a><span>/</span><span style="color:var(--fg)">TV-Produktion</span></div>
+<div class="wrap crumbs mono"><a href="/de/">Start</a><span>/</span><a href="/de/#services">Was sie macht</a><span>/</span><span style="color:var(--fg)">TV-Produktion</span></div>
 <section class="wrap hero">
   <div>
     <div class="k"><span class="mono">CAM 1</span><i></i><span class="mono">TV-Produktion</span></div>
     <h1>TV-Produktion, von der Idee bis zur Ausstrahlung</h1>
     <p class="lede">Studioshows, Magazinformate, Specials und Branded Content — produziert von jemandem, der bei den Live-Sendungen selbst in der Regie saß.</p>
-    <div class="ctas"><a class="btn primary" href="../index.html#booking-sec">Sandra buchen</a><a class="btn" href="../index.html#services">Alle Leistungen</a></div>
+    <div class="ctas"><a class="btn primary" href="/de/#booking-sec">Sandra buchen</a><a class="btn" href="/de/#services">Alle Leistungen</a></div>
   </div>
   <div class="photo"><img src="../sandra.jpg" alt="Sandra Pudja, TV producer, Berlin"><span class="tag"><span class="rec-dot"></span>CAM 1</span></div>
 </section>
@@ -119,15 +120,15 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(56px + env(safe-
 <section class="sec"><div class="wrap"><h2>Das bekommst du</h2><div class="grid3"><div class="card"><span class="mono">01</span><h3>Format und Konzept</h3><p>Formatbibel, Pitch-Deck und ein realistisches Budget, bevor jemand ein Studio bucht.</p></div><div class="card"><span class="mono">02</span><h3>Vorproduktion</h3><p>Drehbuch, Rundown, Gästebuchung, Set- und Grafik-Briefing, Crew- und Studiobuchung.</p></div><div class="card"><span class="mono">03</span><h3>Drehtag</h3><p>Aufnahmeleitung und Regie-Koordination, Timing, Talent-Betreuung, Problemlösung live.</p></div><div class="card"><span class="mono">04</span><h3>Übergabe Post</h3><p>Schnittbriefing, Assets, Logs und ein Wrap-Report, damit der Cutter am Montag anfängt, nicht am Mittwoch.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><h2>So läuft es</h2><div class="grid3"><div class="card"><h3>1. Briefing</h3><p>Ein 30-Minuten-Call: was, für wen, wann, und welches Budget es wirklich gibt.</p></div><div class="card"><h3>2. Plan</h3><p>Innerhalb einer Woche bekommst du Rundown, Zeitplan und eine Kostenschätzung zum Freigeben.</p></div><div class="card"><h3>3. Produktion</h3><p>Sandra führt das Set. Du schaust auf den Monitor.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><h2>Häufige Fragen</h2><div class="faq"><details><summary>Produzierst du auf Deutsch?</summary><p>Ja. Sandra arbeitet auf Deutsch, Englisch und Kroatisch und leitet deutschsprachige Studioproduktionen in Berlin.</p></details><details><summary>Arbeitest du mit bestehenden Teams?</summary><p>Meistens. Sie fügt sich als Produzentin, Line Producer oder Produktionsleiterin in bestehende Sender- oder Agenturteams ein.</p></details><details><summary>Welche Formate sind typisch?</summary><p>Wöchentliche Studiomagazine, Entertainment- und Award-Specials, Talkformate, Mehrkamera-Branded-Content für Streaming.</p></details><details><summary>Wie früh sollten wir buchen?</summary><p>Für eine Studioshow sechs bis acht Wochen vor dem ersten Aufzeichnungstag. Für ein einmaliges Special reichen vier Wochen.</p></details></div></div></section>
-<section class="sec"><div class="wrap"><div class="cta"><div><h3>Klingt nach deiner nächsten Produktion?</h3><p>Schreib drei Sätze darüber, was du drehst und wann. Sandra antwortet innerhalb von 48 Stunden.</p></div><a class="btn primary" href="../index.html#booking-sec">Sandra buchen</a></div></div></section>
-<section class="sec"><div class="wrap"><h2 style="font-size:18px">Verwandt</h2><div class="related"><a href="live-event-production.html">Live- & Event-Produktion</a><a href="shoot-organisation.html">Drehorganisation & Logistik</a><a href="production-consulting.html">Beratung & Mentoring</a><a href="tv-producer-berlin.html">TV-Produzentin in Berlin</a></div></div></section>
+<section class="sec"><div class="wrap"><div class="cta"><div><h3>Klingt nach deiner nächsten Produktion?</h3><p>Schreib drei Sätze darüber, was du drehst und wann. Sandra antwortet innerhalb von 48 Stunden.</p></div><a class="btn primary" href="/de/#booking-sec">Sandra buchen</a></div></div></section>
+<section class="sec"><div class="wrap"><h2 style="font-size:18px">Verwandt</h2><div class="related"><a href="live-event-production.php">Live- & Event-Produktion</a><a href="shoot-organisation.php">Drehorganisation & Logistik</a><a href="production-consulting.php">Beratung & Mentoring</a><a href="tv-producer-berlin.php">TV-Produzentin in Berlin</a></div></div></section>
 </main>
 <footer><div class="wrap">
   <div class="fgrid">
-    <div><h4>Leistungen</h4><ul><li><a href="tv-production.html">TV-Produktion</a></li><li><a href="live-event-production.html">Live- & Event-Produktion</a></li><li><a href="shoot-organisation.html">Drehorganisation & Logistik</a></li><li><a href="production-consulting.html">Beratung & Mentoring</a></li></ul></div>
-    <div><h4>Lokal</h4><ul><li><a href="tv-producer-berlin.html">TV-Produzentin in Berlin</a></li></ul></div>
+    <div><h4>Leistungen</h4><ul><li><a href="tv-production.php">TV-Produktion</a></li><li><a href="live-event-production.php">Live- & Event-Produktion</a></li><li><a href="shoot-organisation.php">Drehorganisation & Logistik</a></li><li><a href="production-consulting.php">Beratung & Mentoring</a></li></ul></div>
+    <div><h4>Lokal</h4><ul><li><a href="tv-producer-berlin.php">TV-Produzentin in Berlin</a></li></ul></div>
     <div><h4>Kontakt</h4><ul><li><a href="mailto:hello@sandrapudja.com">hello@sandrapudja.com</a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
-    <div><h4>Sprache</h4><ul><li><a href="/de/index.html">English</a></li><li><a href="/index.html">Deutsch</a></li></ul></div>
+    <div><h4>Sprache</h4><ul><li><a href="/de/">English</a></li><li><a href="/">Deutsch</a></li></ul></div>
   </div>
   <div class="fbot"><span class="mono">End of transmission · 2026</span><span class="mono">Sandra Pudja · TV-Produzentin · Berlin</span></div>
 </div></footer>

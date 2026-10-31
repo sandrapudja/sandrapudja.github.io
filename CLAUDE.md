@@ -8,23 +8,23 @@ Hosted on Hostinger; Hostinger pulls this repo (branch `main`) into `public_html
 
 | Path | What it is |
 |---|---|
-| `index.html` | The whole site, English default. All three languages live inside it (see Texts). |
-| `de/index.html` | Same page, German as default language. Keep it in sync with `index.html` (same file, only `lang = "de"` and `src="../sandra.jpg"` differ). |
-| `tv-production.html`, `live-event-production.html`, `shoot-organisation.html`, `production-consulting.html`, `tv-producer-berlin.html` | SEO service pages, English. |
-| `de/*.html` | German versions of the service pages. |
+| `index.php` | The whole site, English default. All three languages live inside it (see Texts). |
+| `de/index.php` | Same page, German as default language. Keep it in sync with `index.php` (same file, only `lang = "de"` and `src="../sandra.jpg"` differ). |
+| `tv-production.php`, `live-event-production.php`, `shoot-organisation.php`, `production-consulting.php`, `tv-producer-berlin.php` | SEO service pages, English. |
+| `de/*.php` | German versions of the service pages. |
 | `send.php` | Booking form handler (PHP `mail()`). Sends the request to Sandra and a confirmation to the sender. |
 | `sandra.jpg` | The one portrait used everywhere (multiviewer, live monitor, service pages). 896×1088, ~70 KB. |
-| `.htaccess` | HTTPS + non-www redirect, clean URLs (`/tv-production` → `tv-production.html`). |
+| `.htaccess` | HTTPS + non-www redirect, clean URLs (`/tv-production` → `tv-production.php`), old `.html` links 301 to `.php`. |
 | `sitemap.xml`, `robots.txt` | SEO. Update `sitemap.xml` if a page is added. |
 
 ## Texts (how to change wording)
 
-All copy on `index.html` is in one JavaScript object near the top of the `<script>`: `var T = { en:{…}, hr:{…}, de:{…} }`.
+All copy on `index.php` is in one JavaScript object near the top of the `<script>`: `var T = { en:{…}, hr:{…}, de:{…} }`.
 Keys are stable: `svc.1.t` (service 1 title), `svc.1.d` (short), `svc.1.m` (long), `way.3.t` / `way.3.d` / `way.3.l` / `way.3.cta` (Sandra way card 3), `book.*` (booking), `x.*` (hero, stats), `ch0.*` (secret channel).
-**Change the text in all three languages**, then copy the whole `T` object into `de/index.html` as well.
+**Change the text in all three languages**, then copy the whole `T` object into `de/index.php` as well.
 Service pages have their text inline in HTML; edit EN and DE separately.
 
-## Structure of index.html
+## Structure of index.php
 
 1. **Hero** — name, role line, two buttons, and the **multiviewer** on the right (PGM screen + 6 preview monitors: CAM 1–4, BARS, CLOCK). Hover a preview to send it to PGM.
 2. **Stats** strip (4 / 0 / 48h / 3).
@@ -43,7 +43,7 @@ Intro countdown (3-2-1-ON AIR) plays once per browser session.
 ## Booking form / e-mail
 
 `send.php`, top of file: `$TO` = Sandra's inbox, `$FROM` = a mailbox that exists on this domain (create it in hPanel → Emails, e.g. `booking@sandrapudja.com`), otherwise Hostinger may drop the mail.
-The `code` under the form and the fallback `mailto:` use `MAIL` in `index.html`; keep it equal to `$TO`.
+The `code` under the form and the fallback `mailto:` use `MAIL` in `index.php`; keep it equal to `$TO`.
 
 ## Rules
 
@@ -55,7 +55,9 @@ The `code` under the form and the fallback `mailto:` use `MAIL` in `index.html`;
 
 ## Password gate (temporary)
 
-The whole site is behind a curtain page (`gate.php`) until the visitor enters the password. Hint shown: "Kaj?". Answer: `zmaj` (case-insensitive, trailing "!" allowed).
-On success the server sets an HttpOnly cookie `sp_access` (90 days) and the page reloads into the site.
-`og.jpg` and `robots.txt` stay public so share previews keep working; everything else, including `send.php`, needs the cookie.
-**To open the site to everyone:** delete the `# --- GATE` … `# --- END GATE` block in `.htaccess` and push. `gate.php` can stay or be deleted.
+Every page starts with `<?php require __DIR__ . '/_gate.php'; ?>` (in `de/`: `'/../_gate.php'`). Pages are plain HTML otherwise.
+`_gate.php` checks the HttpOnly cookie `sp_access`; without it the visitor gets `gate.php`: red curtain, hint "Kaj?", password `zmaj` (case-insensitive, trailing "!" allowed). Correct answer sets the cookie for 90 days and the page reloads into the site.
+Pages are sent with `Cache-Control: private, no-store` and `Vary: Cookie` so a CDN never serves the unlocked page to a locked visitor.
+`og.jpg`, `sandra.jpg` and `robots.txt` are static and stay public, so share previews keep working.
+
+**To open the site to everyone:** in `_gate.php` replace everything after the `define(...)` line with nothing (or make the file return immediately: put `return;` on line 2) and push. Pages keep working as `.php`.

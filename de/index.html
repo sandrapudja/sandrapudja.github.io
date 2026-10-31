@@ -206,8 +206,6 @@ form{display:grid;gap:16px}
 .field{display:grid;gap:6px}
 .field label{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .field input,.field select,.field textarea{width:100%;max-width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0;-webkit-appearance:none;appearance:none}
-.field input[type="date"]{display:block;min-height:48px;-webkit-appearance:none;appearance:none}
-.field input[type="date"]::-webkit-date-and-time-value{text-align:left}
 .field select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
 .field textarea{min-height:120px;resize:vertical}
 .field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:0;border-color:var(--fg)}
@@ -429,10 +427,7 @@ footer a:hover{color:var(--fg)}
           <div class="field"><label for="f-name" data-i18n="book.name"></label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ana Horvat"><span class="err" data-i18n="book.err.name"></span></div>
           <div class="field"><label for="f-email" data-i18n="book.email"></label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="ana@production.com"><span class="err" data-i18n="book.err.email"></span></div>
         </div>
-        <div class="row2">
-          <div class="field"><label for="f-type" data-i18n="book.type"></label><select id="f-type" name="type"><option value="tv" data-i18n="svc.1.t"></option><option value="live" data-i18n="svc.2.t"></option><option value="org" data-i18n="svc.3.t"></option><option value="consult" data-i18n="svc.4.t"></option></select></div>
-          <div class="field"><label for="f-date" data-i18n="book.date"></label><input id="f-date" name="date" type="date"></div>
-        </div>
+        <div class="field"><label for="f-type" data-i18n="book.type"></label><select id="f-type" name="type"><option value="tv" data-i18n="svc.1.t"></option><option value="live" data-i18n="svc.2.t"></option><option value="org" data-i18n="svc.3.t"></option><option value="consult" data-i18n="svc.4.t"></option></select></div>
         <div class="field"><label for="f-msg" data-i18n="book.msg"></label><textarea id="f-msg" name="message" placeholder="Three sentences are enough."></textarea><span class="err" data-i18n="book.err.msg"></span></div>
         <button class="btn primary" type="submit" style="justify-self:start"><span class="rec-dot" style="background:var(--bg);animation:none"></span><span data-i18n="book.send"></span></button>
         <p class="mail-line"><span data-i18n="book.or"></span> <code id="mail-addr">hello@sandrapudja.com</code> <button type="button" id="copy-mail" data-i18n="book.copy"></button></p>
@@ -645,14 +640,14 @@ footer a:hover{color:var(--fg)}
   form.addEventListener("submit", function(e){
     e.preventDefault();
     var name = document.getElementById("f-name").value.trim(), email = document.getElementById("f-email").value.trim(), msg = document.getElementById("f-msg").value.trim();
-    var sel = document.getElementById("f-type"); var type = sel.options[sel.selectedIndex].textContent; var date = document.getElementById("f-date").value;
+    var sel = document.getElementById("f-type"); var type = sel.options[sel.selectedIndex].textContent; var date = "";
     var ok = true;
     if (!name){ fieldOf("f-name").classList.add("bad"); ok=false; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ fieldOf("f-email").classList.add("bad"); ok=false; }
     if (msg.length < 10){ fieldOf("f-msg").classList.add("bad"); ok=false; }
     if (!ok) return;
     var t = T[lang]; var btn = form.querySelector('button[type="submit"]'); var btnTxt = btn.querySelector('[data-i18n="book.send"]');
-    var fd = new FormData(); fd.append("name", name); fd.append("email", email); fd.append("type", sel.value); fd.append("date", date); fd.append("message", msg); fd.append("lang", lang); fd.append("website", document.getElementById("f-hp").value);
+    var fd = new FormData(); fd.append("name", name); fd.append("email", email); fd.append("type", sel.value); fd.append("message", msg); fd.append("lang", lang); fd.append("website", document.getElementById("f-hp").value);
     btn.disabled = true; btnTxt.textContent = t["book.sending"]; sent.className = "sent"; sent.textContent = "";
     fetch("/send.php", { method:"POST", body: fd }).then(function(r){ return r.json().catch(function(){ return {ok:false}; }).then(function(j){ return {status:r.status, j:j}; }); })
     .then(function(res){

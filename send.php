@@ -44,7 +44,7 @@ $body  = "New booking request from $SITE\n\n";
 $body .= "Name:     $name\n";
 $body .= "Email:    $email\n";
 $body .= "Project:  $typeLabel\n";
-$body .= "Date:     " . ($date !== '' ? $date : '—') . "\n";
+if ($date !== '') $body .= "Date:     $date\n";
 $body .= "Language: " . strtoupper($lang ?: 'en') . "\n";
 $body .= "IP:       $ip\n\n";
 $body .= "Message:\n$msg\n";

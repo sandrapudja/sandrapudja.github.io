@@ -9,6 +9,9 @@ RewriteRule ^ https://sandrapudja.com%{REQUEST_URI} [L,R=301]
 RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^de/index\.html$ /de/ [R=301,L]
 RewriteRule ^(.+)\.html$ /$1.php [R=301,L]
+# consulting page was replaced by the right-hand page
+RewriteRule ^production-consulting(\.php)?$ /right-hand.php [R=301,L]
+RewriteRule ^de/production-consulting(\.php)?$ /de/right-hand.php [R=301,L]
 # clean URLs: /tv-production -> tv-production.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f

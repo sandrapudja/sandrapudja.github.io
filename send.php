@@ -35,7 +35,7 @@ if ($name === '')                                   fail(422, 'name');
 if (!filter_var($email, FILTER_VALIDATE_EMAIL))     fail(422, 'email');
 if (mb_strlen($msg) < 10)                           fail(422, 'message');
 
-$types = ['tv'=>'TV production','live'=>'Event / live production','org'=>'Shoot organisation & logistics','consult'=>'Consulting & mentoring'];
+$types = ['tv'=>'TV production','live'=>'Event / live production','org'=>'Shoot organisation & logistics','hand'=>'Your right hand'];
 $typeLabel = $types[$type] ?? $type;
 
 // ---- mail to Sandra ----

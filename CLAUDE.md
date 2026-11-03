@@ -10,7 +10,7 @@ Hosted on Hostinger; Hostinger pulls this repo (branch `main`) into `public_html
 |---|---|
 | `index.php` | The whole site, English default. All three languages live inside it (see Texts). |
 | `de/index.php` | Same page, German as default language. Keep it in sync with `index.php` (same file, only `lang = "de"` and `src="../sandra.jpg"` differ). |
-| `tv-production.php`, `live-event-production.php`, `shoot-organisation.php`, `production-consulting.php`, `tv-producer-berlin.php` | SEO service pages, English. |
+| `tv-production.php`, `live-event-production.php`, `shoot-organisation.php`, `right-hand.php` (replaced `production-consulting.php` in Nov 2026; old URLs 301 in `.htaccess`), `tv-producer-berlin.php` | SEO service pages, English. |
 | `de/*.php` | German versions of the service pages. |
 | `send.php` | Booking form handler (PHP `mail()`). Sends the request to Sandra and a confirmation to the sender. |
 | `sandra.jpg` | The one portrait used everywhere (multiviewer, live monitor, service pages). 896×1088, ~70 KB. |
@@ -28,8 +28,8 @@ Service pages have their text inline in HTML; edit EN and DE separately.
 
 1. **Hero** — name, role line, two buttons, and the **multiviewer** on the right (PGM screen + 6 preview monitors: CAM 1–4, BARS, CLOCK). Hover a preview to send it to PGM.
 2. **Stats** strip (4 / 0 / 48h / 3).
-3. **What she does** — 4 cards, each with an animated SVG scene (TV studio, live waveform, call sheet, mentoring). Click opens the long text.
-4. **The Sandra way** — 6 cards that stack on scroll (`.scard`, sticky). Each has number, title, short, long, CTA.
+3. **What I do** — 4 cards, each with an animated SVG scene (TV studio, live waveform, call sheet, right-hand to-do list). Click opens the long text.
+4. **How I work** — 6 cards that stack on scroll (`.scard`, sticky). Each has number, title, short, long, CTA.
 5. **Booking** — form (posts to `/send.php`) + live monitor with the portrait.
 6. **Footer** — service page index, contact, about.
 

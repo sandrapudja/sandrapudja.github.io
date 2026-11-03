@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Sandra Pudja — freelance TV producer in Berlin. Studio shows, live and event production, shoot organisation and logistics, consulting and mentoring. EN · DE · HR.">
+<meta name="description" content="Sandra Pudja — freelance TV producer in Berlin. Studio shows, live and event production, shoot organisation and logistics, and right-hand support for founders and small teams. EN · DE · HR.">
 <link rel="canonical" href="https://sandrapudja.com/">
 <link rel="alternate" hreflang="en" href="https://sandrapudja.com/">
 <link rel="alternate" hreflang="de" href="https://sandrapudja.com/de/">
@@ -172,13 +172,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .art-org .chk{stroke-dasharray:40;stroke-dashoffset:40}
 .cam:hover .art-org .chk{animation:chk 2.4s ease-out infinite}
 @keyframes chk{0%,55%{stroke-dashoffset:40}75%,100%{stroke-dashoffset:0}}
-/* 4 Mentoring: two frames, a line draws between, second frame lights */
-.art-men .link{stroke-dasharray:140;stroke-dashoffset:140}
-.cam:hover .art-men .link{animation:link 2.2s ease-in-out infinite}
-@keyframes link{0%{stroke-dashoffset:140}45%,70%{stroke-dashoffset:0}100%{stroke-dashoffset:-140}}
-.cam:hover .art-men .f2{animation:f2 2.2s steps(1) infinite}
-@keyframes f2{0%,44%{stroke:var(--line-strong)}45%,100%{stroke:var(--tally)}}
-.cam:hover .art-men .t2{animation:f2 2.2s steps(1) infinite;fill:none}
+/* 4 Right hand: a to-do list, items tick off one by one */
+.art-hand .tk,.art-hand .st{stroke-dasharray:1;stroke-dashoffset:1}
+.cam .art-hand .st{stroke:var(--muted);stroke-width:1}
+.art-hand .r1 .tk,.art-hand .r1 .st{stroke-dashoffset:0}
+.cam:hover .art-hand .tk,.cam:hover .art-hand .st{animation:tick 3.4s ease-out infinite}
+.art-hand .r2 *{animation-delay:.4s !important}.art-hand .r3 *{animation-delay:.8s !important}.art-hand .r4 *{animation-delay:1.2s !important}.art-hand .r5 *{animation-delay:1.6s !important}
+@keyframes tick{0%{stroke-dashoffset:1}18%,100%{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){.cam:hover .art *{animation:none !important}}
 
 /* stacked cards */
@@ -406,11 +406,15 @@ footer a:hover{color:var(--fg)}
 <rect class="ln" x="206" y="44" width="16" height="16" rx="3"></rect><path class="hi chk" d="M209 52 L213 56 L220 47"></path>
 <path class="ln" d="M18 140 H230"></path>
 </svg></span><span class="top"><span class="mono">CAM 3</span><span class="tally"></span></span><h3 data-i18n="svc.3.t"></h3><p data-i18n="svc.3.d"></p><p class="more" data-i18n="svc.3.m"></p><span class="hint" data-i18n="svc.hint"></span></button>
-    <button class="cam" type="button" aria-expanded="false"><span class="art"><svg class="art-men" viewBox="0 0 260 180" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
-<rect class="ln" x="22" y="40" width="70" height="52" rx="3" style="stroke:var(--tally)"></rect><circle class="fg" cx="57" cy="60" r="7" style="fill:var(--tally)"></circle><path class="hi" d="M43 84 C43 74 71 74 71 84"></path><text x="34" y="106" style="fill:var(--fg)">SANDRA</text>
-<path class="ln link" d="M92 66 C 120 66, 130 66, 158 66" style="stroke:var(--tally);stroke-width:1.5"></path>
-<rect class="ln f2" x="158" y="40" width="70" height="52" rx="3"></rect><circle class="fg t2" cx="193" cy="60" r="7" style="stroke:var(--line-strong);stroke-width:1.5"></circle><path class="ln f2" d="M179 84 C179 74 207 74 207 84"></path><text x="166" y="106">JR PRODUCER</text>
-<path class="ln" d="M22 126 H228 M22 140 H140"></path>
+    <button class="cam" type="button" aria-expanded="false"><span class="art"><svg class="art-hand" viewBox="0 0 260 180" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+<text x="18" y="28" style="fill:var(--fg)">TO DO · TODAY</text><circle cx="200" cy="25.5" r="2.5" style="fill:var(--rec)"></circle><text x="207" y="28">ON IT</text>
+<path class="ln" d="M18 35 H230"></path>
+<g class="r r1"><rect class="ln" x="18" y="43" width="9" height="9" rx="2"></rect><path class="hi tk" pathLength="1" d="M19.8 47.5 L22.2 50 L26 44.5"></path><text x="36" y="51">BOOK FLIGHTS</text><path class="hi st" pathLength="1" d="M34 47.5 H95"></path></g>
+<g class="r r2"><rect class="ln" x="18" y="61" width="9" height="9" rx="2"></rect><path class="hi tk" pathLength="1" d="M19.8 65.5 L22.2 68 L26 62.5"></path><text x="36" y="69">CALL THE VENUE</text><path class="hi st" pathLength="1" d="M34 65.5 H105"></path></g>
+<g class="r r3"><rect class="ln" x="18" y="79" width="9" height="9" rx="2"></rect><path class="hi tk" pathLength="1" d="M19.8 83.5 L22.2 86 L26 80.5"></path><text x="36" y="87">CHASE SUPPLIER</text><path class="hi st" pathLength="1" d="M34 83.5 H105"></path></g>
+<g class="r r4"><rect class="ln" x="18" y="97" width="9" height="9" rx="2"></rect><path class="hi tk" pathLength="1" d="M19.8 101.5 L22.2 104 L26 98.5"></path><text x="36" y="105">FIND A GIFT</text><path class="hi st" pathLength="1" d="M34 101.5 H90"></path></g>
+<g class="r r5"><rect class="ln" x="18" y="115" width="9" height="9" rx="2"></rect><path class="hi tk" pathLength="1" d="M19.8 119.5 L22.2 122 L26 116.5"></path><text x="36" y="123">MOVE 3PM MEETING</text><path class="hi st" pathLength="1" d="M34 119.5 H115"></path></g>
+<path class="ln" d="M18 140 H230"></path>
 </svg></span><span class="top"><span class="mono">CAM 4</span><span class="tally"></span></span><h3 data-i18n="svc.4.t"></h3><p data-i18n="svc.4.d"></p><p class="more" data-i18n="svc.4.m"></p><span class="hint" data-i18n="svc.hint"></span></button>
   </div>
 </div></section>
@@ -439,7 +443,7 @@ footer a:hover{color:var(--fg)}
           <div class="field"><label for="f-name" data-i18n="book.name"></label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name"><span class="err" data-i18n="book.err.name"></span></div>
           <div class="field"><label for="f-email" data-i18n="book.email"></label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@company.com"><span class="err" data-i18n="book.err.email"></span></div>
         </div>
-        <div class="field"><label for="f-type" data-i18n="book.type"></label><select id="f-type" name="type"><option value="tv" data-i18n="svc.1.t"></option><option value="live" data-i18n="svc.2.t"></option><option value="org" data-i18n="svc.3.t"></option><option value="consult" data-i18n="svc.4.t"></option></select></div>
+        <div class="field"><label for="f-type" data-i18n="book.type"></label><select id="f-type" name="type"><option value="tv" data-i18n="svc.1.t"></option><option value="live" data-i18n="svc.2.t"></option><option value="org" data-i18n="svc.3.t"></option><option value="hand" data-i18n="svc.4.t"></option></select></div>
         <div class="field"><label for="f-msg" data-i18n="book.msg"></label><textarea id="f-msg" name="message" placeholder="Three sentences are enough."></textarea><span class="err" data-i18n="book.err.msg"></span></div>
         <button class="btn primary" type="submit" style="justify-self:start"><span class="rec-dot" style="background:var(--bg);animation:none"></span><span data-i18n="book.send"></span></button>
         <p class="mail-line"><span data-i18n="book.or"></span> <code id="mail-addr">hello@sandrapudja.com</code> <button type="button" id="copy-mail" data-i18n="book.copy"></button></p>
@@ -457,7 +461,7 @@ footer a:hover{color:var(--fg)}
 
 <footer><div class="wrap">
   <div class="fgrid" id="fgrid">
-    <div><h4 data-i18n="f.services"></h4><ul><li><a href="tv-production.php" data-fs="tv-production">TV production</a></li><li><a href="live-event-production.php" data-fs="live-event-production">Live & event production</a></li><li><a href="shoot-organisation.php" data-fs="shoot-organisation">Shoot organisation & logistics</a></li><li><a href="production-consulting.php" data-fs="production-consulting">Consulting & mentoring</a></li></ul></div>
+    <div><h4 data-i18n="f.services"></h4><ul><li><a href="tv-production.php" data-fs="tv-production">TV production</a></li><li><a href="live-event-production.php" data-fs="live-event-production">Live & event production</a></li><li><a href="shoot-organisation.php" data-fs="shoot-organisation">Shoot organisation & logistics</a></li><li><a href="right-hand.php" data-fs="right-hand">Your right hand</a></li></ul></div>
     <div><h4 data-i18n="f.local"></h4><ul><li><a href="tv-producer-berlin.php" data-fs="tv-producer-berlin">TV producer in Berlin</a></li></ul></div>
     <div><h4 data-i18n="f.contact"></h4><ul><li><code style="font-family:var(--font-mono);font-size:13px;color:var(--muted)">hello@sandrapudja.com</code></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
     <div><h4 data-i18n="f.about"></h4><p class="fabout" data-i18n="f.abouttxt"></p></div>
@@ -479,7 +483,7 @@ footer a:hover{color:var(--fg)}
       "svc.1.t":"TV produkcija","svc.1.d":"Od ideje do emitiranja. Studijske emisije, magazini, specijali.","svc.1.m":"Format, scenarij, gosti, scenografija, režija, postprodukcija. Držim cijeli lanac i znam gdje svaka karika puca prije nego pukne.",
       "svc.2.t":"Produkcija eventa / live","svc.2.d":"Prijenosi uživo, dodjele, konferencije. Kad nema drugog take-a.","svc.2.m":"Rundown u minutu, tehnika, voditelji, publika, sponzorski blokovi. Uživo nema montaže, zato sve mora biti gotovo prije nego što se upali REC.",
       "svc.3.t":"Organizacija i logistika snimanja","svc.3.d":"Call sheets, lokacije, ekipa, budžet. Sve na vrijeme, sve na papiru.","svc.3.m":"Raspored snimanja, dozvole, prijevoz, catering, satnica svakog člana ekipe. Ono što na setu izgleda kao sreća, iza toga je tablica.",
-      "svc.4.t":"Konzultacije i mentoring","svc.4.d":"Za produkcije koje trebaju red i producente koji ga tek uče.","svc.4.m":"Pregled postojećeg workflowa, postavljanje procesa, rad jedan na jedan s mlađim producentima. Manje kaosa, više emisija.",
+      "svc.4.t":"Tvoja desna ruka","svc.4.d":"Poslovna i osobna podrška, bez novog zaposlenja.","svc.4.m":"Kalendar, mailovi, putovanja, rezervacije, follow-upovi, istraživanje i sve ono „samo me podsjeti“. Za jedan zadatak, jedan dan ili dugoročno. Ti mi predaš, ja se pobrinem da sve ide dalje.",
       "way.eyebrow":"Kako radim","way.seq":"Sekvenca 01 · 6 klipova","way.title":"Kako radim","way.lede":"Šest pravila koja se ne pišu u ugovor, ali ih svi na setu osjete.",
       "way.1.t":"Call sheet prije kave","way.1.d":"Plan izlazi večer prije. Ujutro nitko ne pita „što sad?“",
       "way.2.t":"Plan B ima plan C","way.2.d":"Svaka lokacija, svaki gost, svaki kabel ima rezervu.",
@@ -498,7 +502,7 @@ footer a:hover{color:var(--fg)}
       "svc.1.t":"TV production","svc.1.d":"From idea to air. Studio shows, magazines, specials.","svc.1.m":"Format, script, guests, set, direction, post. I hold the whole chain and know where each link breaks before it does.",
       "svc.2.t":"Event / live production","svc.2.d":"Live broadcasts, award shows, conferences. When there is no second take.","svc.2.m":"Minute-by-minute rundown, tech, hosts, audience, sponsor blocks. Live has no edit, so everything is finished before REC goes on.",
       "svc.3.t":"Shoot organisation and logistics","svc.3.d":"Call sheets, locations, crew, budget. On time, on paper.","svc.3.m":"Shooting schedule, permits, transport, catering, every crew member's hours. What looks like luck on set is a spreadsheet behind it.",
-      "svc.4.t":"Consulting and mentoring","svc.4.d":"For productions that need order and producers still learning it.","svc.4.m":"Review of the existing workflow, process setup, one-on-one work with junior producers. Less chaos, more shows.",
+      "svc.4.t":"Your right hand","svc.4.d":"Executive and personal support, without hiring anyone.","svc.4.m":"Calendar, emails, travel, bookings, follow-ups, research and the \"don't let me forget this\" things. For one task, one day or ongoing. You hand it over, I keep it moving.",
       "way.eyebrow":"How I work","way.seq":"Sequence 01 · 6 clips","way.title":"How I work","way.lede":"Six rules never written into a contract, felt by everyone on set.",
       "way.1.t":"Call sheet before coffee","way.1.d":"The plan goes out the night before. In the morning nobody asks \"what now?\"",
       "way.2.t":"Plan B has a plan C","way.2.d":"Every location, every guest, every cable has a backup.",
@@ -517,7 +521,7 @@ footer a:hover{color:var(--fg)}
       "svc.1.t":"TV-Produktion","svc.1.d":"Von der Idee bis zur Ausstrahlung. Studioshows, Magazine, Specials.","svc.1.m":"Format, Drehbuch, Gäste, Bühnenbild, Regie, Postproduktion. Ich halte die ganze Kette und weiß, wo jedes Glied reißt, bevor es reißt.",
       "svc.2.t":"Event- / Live-Produktion","svc.2.d":"Live-Übertragungen, Preisverleihungen, Konferenzen. Wenn es keinen zweiten Take gibt.","svc.2.m":"Rundown auf die Minute, Technik, Moderation, Publikum, Sponsorenblöcke. Live gibt es keinen Schnitt, also ist alles fertig, bevor REC leuchtet.",
       "svc.3.t":"Drehorganisation und Logistik","svc.3.d":"Call Sheets, Locations, Crew, Budget. Pünktlich, schriftlich.","svc.3.m":"Drehplan, Genehmigungen, Transport, Catering, Stunden jedes Crewmitglieds. Was am Set wie Glück aussieht, ist dahinter eine Tabelle.",
-      "svc.4.t":"Beratung und Mentoring","svc.4.d":"Für Produktionen, die Ordnung brauchen, und Produzenten, die sie gerade lernen.","svc.4.m":"Analyse des bestehenden Workflows, Prozessaufbau, Eins-zu-eins-Arbeit mit jungen Produzenten. Weniger Chaos, mehr Sendungen.",
+      "svc.4.t":"Deine rechte Hand","svc.4.d":"Business- und persönliche Unterstützung, ohne jemanden einzustellen.","svc.4.m":"Kalender, E-Mails, Reisen, Buchungen, Follow-ups, Recherche und alles, was unter „erinner mich bitte daran“ fällt. Für eine Aufgabe, einen Tag oder dauerhaft. Du gibst es ab, ich halte es in Bewegung.",
       "way.eyebrow":"Wie ich arbeite","way.seq":"Sequenz 01 · 6 Clips","way.title":"Wie ich arbeite","way.lede":"Sechs Regeln, die in keinem Vertrag stehen, aber alle am Set spüren.",
       "way.1.t":"Call Sheet vor dem Kaffee","way.1.d":"Der Plan geht am Abend vorher raus. Morgens fragt niemand „und jetzt?“",
       "way.2.t":"Plan B hat einen Plan C","way.2.d":"Jede Location, jeder Gast, jedes Kabel hat eine Reserve.",
@@ -544,7 +548,7 @@ footer a:hover{color:var(--fg)}
     document.querySelectorAll("[data-i18n]").forEach(function(el){ var k = el.getAttribute("data-i18n"); if (T[l][k] != null) el.textContent = T[l][k]; });
     document.querySelectorAll(".lang-menu button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-lang")===l ? "true":"false"); });
     document.getElementById("lang-cur-t").textContent = l.toUpperCase();
-    var FS = {"en": {"tv-production": "TV production", "live-event-production": "Live & event production", "shoot-organisation": "Shoot organisation & logistics", "production-consulting": "Consulting & mentoring", "tv-producer-berlin": "TV producer in Berlin"}, "de": {"tv-production": "TV-Produktion", "live-event-production": "Live- & Event-Produktion", "shoot-organisation": "Drehorganisation & Logistik", "production-consulting": "Beratung & Mentoring", "tv-producer-berlin": "TV-Produzentin in Berlin"}, "hr": {"tv-production": "TV produkcija", "live-event-production": "Produkcija eventa / live", "shoot-organisation": "Organizacija i logistika snimanja", "production-consulting": "Konzultacije i mentoring", "tv-producer-berlin": "TV producentica u Berlinu"}};
+    var FS = {"en": {"tv-production": "TV production", "live-event-production": "Live & event production", "shoot-organisation": "Shoot organisation & logistics", "right-hand": "Your right hand", "tv-producer-berlin": "TV producer in Berlin"}, "de": {"tv-production": "TV-Produktion", "live-event-production": "Live- & Event-Produktion", "shoot-organisation": "Drehorganisation & Logistik", "right-hand": "Deine rechte Hand", "tv-producer-berlin": "TV-Produzentin in Berlin"}, "hr": {"tv-production": "TV produkcija", "live-event-production": "Produkcija eventa / live", "shoot-organisation": "Organizacija i logistika snimanja", "right-hand": "Tvoja desna ruka", "tv-producer-berlin": "TV producentica u Berlinu"}};
     document.querySelectorAll("[data-fs]").forEach(function(a){ var k = a.getAttribute("data-fs"); a.textContent = (FS[l]||FS.en)[k]; a.setAttribute("href", "/" + (l==="de" ? "de/" : "") + k + ".php"); });
     updateWay();
     try{ localStorage.setItem("sp-lang2", l); }catch(e){}

@@ -9,11 +9,11 @@ Hosted on Hostinger; Hostinger pulls this repo (branch `main`) into `public_html
 | Path | What it is |
 |---|---|
 | `index.php` | The whole site, English default. All three languages live inside it (see Texts). |
-| `de/index.php` | Same page, German as default language. Keep it in sync with `index.php` (same file, only `lang = "de"` and `src="../sandra.jpg"` differ). |
+| `de/index.php` | Same page, German as default language. Keep it in sync with `index.php` (same file, only `lang = "de"` and image paths with `../` differ). |
 | `live-event-production.php`, `media-creator-projects.php`, `operations-project-support.php`, `right-hand.php`, `producer-berlin.php` | SEO service pages, English (rebuilt Nov 2026 to match the four service cards; old URLs `tv-production`, `shoot-organisation`, `tv-producer-berlin`, `production-consulting` 301 in `.htaccess`). Each shows a slate instead of a photo. |
 | `de/*.php` | German versions of the service pages. |
 | `send.php` | Booking form handler (PHP `mail()`). Sends the request to Sandra and a confirmation to the sender. |
-| `sandra.jpg` | Old AI portrait. No longer shown on pages (slates replaced it); still used by `og.jpg`/structured data until those are replaced. |
+| `og.jpg` | Share preview image (1200×630): name, headline, roles and the slate. No photo. |
 | `off-duty.jpg` | Real photo (museum, chick) on the OFF DUTY monitor. |
 | `.htaccess` | HTTPS + non-www redirect, clean URLs (`/tv-production` → `tv-production.php`), old `.html` links 301 to `.php`. |
 | `sitemap.xml`, `robots.txt` | SEO. Update `sitemap.xml` if a page is added. |
@@ -59,6 +59,6 @@ The `code` under the form and the fallback `mailto:` use `MAIL` in `index.php`; 
 Every page starts with `<?php require __DIR__ . '/_gate.php'; ?>` (in `de/`: `'/../_gate.php'`). Pages are plain HTML otherwise.
 `_gate.php` checks the HttpOnly cookie `sp_access`; without it the visitor gets `gate.php`: red curtain, hint "Kaj?", password `zmaj` (case-insensitive, trailing "!" allowed). Correct answer sets the cookie for 90 days and the page reloads into the site.
 Pages are sent with `Cache-Control: private, no-store` and `Vary: Cookie` so a CDN never serves the unlocked page to a locked visitor.
-`og.jpg`, `sandra.jpg` and `robots.txt` are static and stay public, so share previews keep working.
+`og.jpg`, `off-duty.jpg` and `robots.txt` are static and stay public, so share previews keep working.
 
 **To open the site to everyone:** in `_gate.php` replace everything after the `define(...)` line with nothing (or make the file return immediately: put `return;` on line 2) and push. Pages keep working as `.php`.

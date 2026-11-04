@@ -12,6 +12,10 @@ RewriteRule ^(.+)\.html$ /$1.php [R=301,L]
 # consulting page was replaced by the right-hand page
 RewriteRule ^production-consulting(\.php)?$ /right-hand.php [R=301,L]
 RewriteRule ^de/production-consulting(\.php)?$ /de/right-hand.php [R=301,L]
+# Nov 2026: service pages renamed to match the new four services
+RewriteRule ^(de/)?tv-production(\.php)?$ /$1media-creator-projects.php [R=301,L]
+RewriteRule ^(de/)?shoot-organisation(\.php)?$ /$1operations-project-support.php [R=301,L]
+RewriteRule ^(de/)?tv-producer-berlin(\.php)?$ /$1producer-berlin.php [R=301,L]
 # clean URLs: /tv-production -> tv-production.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f

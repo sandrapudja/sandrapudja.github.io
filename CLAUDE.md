@@ -1,6 +1,6 @@
 # sandrapudja.com — notes for Claude
 
-Personal website of **Sandra Pudja**, TV producer, Berlin. Static HTML, no build step, no framework.
+Personal website of **Sandra Pudja**, freelance producer (live & events, media & creator projects, operations, right hand), Berlin. Static HTML, no build step, no framework.
 Hosted on Hostinger; Hostinger pulls this repo (branch `main`) into `public_html` on every push.
 **A push to `main` is a live deploy.** Make one clean change at a time.
 
@@ -10,10 +10,11 @@ Hosted on Hostinger; Hostinger pulls this repo (branch `main`) into `public_html
 |---|---|
 | `index.php` | The whole site, English default. All three languages live inside it (see Texts). |
 | `de/index.php` | Same page, German as default language. Keep it in sync with `index.php` (same file, only `lang = "de"` and `src="../sandra.jpg"` differ). |
-| `tv-production.php`, `live-event-production.php`, `shoot-organisation.php`, `right-hand.php` (replaced `production-consulting.php` in Nov 2026; old URLs 301 in `.htaccess`), `tv-producer-berlin.php` | SEO service pages, English. |
+| `live-event-production.php`, `media-creator-projects.php`, `operations-project-support.php`, `right-hand.php`, `producer-berlin.php` | SEO service pages, English (rebuilt Nov 2026 to match the four service cards; old URLs `tv-production`, `shoot-organisation`, `tv-producer-berlin`, `production-consulting` 301 in `.htaccess`). Each shows a slate instead of a photo. |
 | `de/*.php` | German versions of the service pages. |
 | `send.php` | Booking form handler (PHP `mail()`). Sends the request to Sandra and a confirmation to the sender. |
-| `sandra.jpg` | The one portrait used everywhere (multiviewer, live monitor, service pages). 896×1088, ~70 KB. |
+| `sandra.jpg` | Old AI portrait. No longer shown on pages (slates replaced it); still used by `og.jpg`/structured data until those are replaced. |
+| `off-duty.jpg` | Real photo (museum, chick) on the OFF DUTY monitor. |
 | `.htaccess` | HTTPS + non-www redirect, clean URLs (`/tv-production` → `tv-production.php`), old `.html` links 301 to `.php`. |
 | `sitemap.xml`, `robots.txt` | SEO. Update `sitemap.xml` if a page is added. |
 

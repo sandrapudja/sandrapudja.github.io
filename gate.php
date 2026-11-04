@@ -33,11 +33,11 @@ http_response_code(200);
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sandra Pudja — TV producer, Berlin</title>
-<meta name="description" content="Sandra Pudja — freelance TV producer in Berlin.">
+<title>Sandra Pudja — Producer, Berlin</title>
+<meta name="description" content="Sandra Pudja — freelance producer in Berlin.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Sandra Pudja — TV producer, Berlin">
-<meta property="og:description" content="TV producer and organisational wonder. Studio, live and location productions in Berlin and across Europe.">
+<meta property="og:title" content="Sandra Pudja — Producer, Berlin">
+<meta property="og:description" content="Live and event production, media and creator projects, operations and right-hand support. Berlin and remote.">
 <meta property="og:image" content="https://sandrapudja.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">

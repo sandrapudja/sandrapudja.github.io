@@ -54,7 +54,9 @@ The `code` under the form and the fallback `mailto:` use `MAIL` in `index.php`; 
 - Test on a phone width before pushing: the stacked cards and multiviewer must still work.
 - Spell the author's name "Andro Anic".
 
-## Password gate (temporary)
+## Password gate (switched OFF since Nov 2026, site is public)
+
+`_gate.php` starts with `return;`, so every page is open. Delete that line to bring the curtain back.
 
 Every page starts with `<?php require __DIR__ . '/_gate.php'; ?>` (in `de/`: `'/../_gate.php'`). Pages are plain HTML otherwise.
 `_gate.php` checks the HttpOnly cookie `sp_access`; without it the visitor gets `gate.php`: red curtain, hint "Kaj?", password `zmaj` (case-insensitive, trailing "!" allowed). Correct answer sets the cookie for 90 days and the page reloads into the site.

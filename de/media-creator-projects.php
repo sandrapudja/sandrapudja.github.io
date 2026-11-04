@@ -136,11 +136,11 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(56px + env(safe-
 <footer><div class="wrap">
   <div class="fgrid">
     <div><h4>Leistungen</h4><ul><li><a href="live-event-production.php">Live- &amp; Event-Produktion</a></li><li><a href="media-creator-projects.php">Medien- &amp; Creator-Projekte</a></li><li><a href="operations-project-support.php">Operations &amp; Projektunterstützung</a></li><li><a href="right-hand.php">Deine rechte Hand</a></li></ul></div>
-    <div><h4>Lokal</h4><ul><li><a href="producer-berlin.php">Produzentin in Berlin</a></li></ul></div>
-    <div><h4>Kontakt</h4><ul><li><a href="mailto:hello@sandrapudja.com">hello@sandrapudja.com</a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+    <div><h4>Berlin & darüber hinaus</h4><ul><li><a href="producer-berlin.php">Produzentin in Berlin</a></li></ul></div>
+    <div><h4>Kontakt</h4><ul><li><a href="mailto:hello@sandrapudja.com">hello@sandrapudja.com</a></li><li><a href="https://www.linkedin.com/in/spudja/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
     <div><h4>Sprache</h4><ul><li><a href="/">English</a></li><li><a href="/de/">Deutsch</a></li></ul></div>
   </div>
-  <div class="fbot"><span class="mono">End of transmission · 2026</span><span class="mono">Sandra Pudja · Produzentin · Berlin</span></div>
+  <div class="fbot"><span class="mono">End of transmission · 2026</span></div>
 </div></footer>
 <script>document.querySelectorAll(".sl-date").forEach(function(e){var d=new Date();e.textContent=("0"+d.getDate()).slice(-2)+"."+("0"+(d.getMonth()+1)).slice(-2)+"."+d.getFullYear();});</script>
 </body></html>

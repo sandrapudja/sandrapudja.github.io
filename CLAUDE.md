@@ -20,7 +20,7 @@ Hosted on Hostinger; Hostinger pulls this repo (branch `main`) into `public_html
 ## Texts (how to change wording)
 
 All copy on `index.php` is in one JavaScript object near the top of the `<script>`: `var T = { en:{…}, hr:{…}, de:{…} }`.
-Keys are stable: `svc.1.t` (service 1 title), `svc.1.d` (short), `svc.1.m` (long), `way.3.t` / `way.3.d` / `way.3.l` / `way.3.cta` (Sandra way card 3), `book.*` (booking), `x.*` (hero, stats), `ch0.*` (secret channel).
+Keys are stable: `svc.1.t` (service 1 title), `svc.1.d` (short), `svc.1.m` (long), `way.3.t` / `way.3.d` / `way.3.l` / `way.3.cta` (Sandra way card 3), `book.*` (booking), `x.*` (hero, stats).
 **Change the text in all three languages**, then copy the whole `T` object into `de/index.php` as well.
 Service pages have their text inline in HTML; edit EN and DE separately.
 
@@ -33,12 +33,12 @@ Service pages have their text inline in HTML; edit EN and DE separately.
 5. **Booking** — form (posts to `/send.php`) + live monitor with the portrait.
 6. **Footer** — service page index, contact, about.
 
-Hidden: click the red dot in the header (or press **R**) → **CH 00**, a birthday message. Keys `ch0.*`.
+The red dot in the header is decoration only (the hidden CH 00 birthday channel was removed in Nov 2026).
 Intro countdown (3-2-1-ON AIR) plays once per browser session.
 
 ## Adding photos
 
-`PHOTOS = ["sandra.jpg"]` in the script. Add more filenames to the array; each photo monitor in the multiviewer takes the next one in turn. Keep photos ≤ 1200 px wide, JPEG quality ~80.
+`PHOTOS = ["off-duty.jpg"]` in the script; monitor sources are set in `seq` (slate, noise, photo, nosig, bars, live). The slate (`slateHTML`, text key `x.slate`) replaces the old AI portrait on the big screen and booking monitor. Add more filenames to the array; each photo monitor in the multiviewer takes the next one in turn. Keep photos ≤ 1200 px wide, JPEG quality ~80.
 
 ## Booking form / e-mail
 

@@ -181,6 +181,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @keyframes tick{0%{stroke-dashoffset:1}18%,100%{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){.cam:hover .art *{animation:none !important}}
 
+/* slate (clapperboard) used on the big screen, a monitor and the booking monitor */
+.slate{position:absolute;inset:0;display:grid;grid-template-rows:14% 1fr;background:#141417;color:var(--fg);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.12em}
+.slate .clap{background:repeating-linear-gradient(-45deg,#ecebe6 0 14%,#141417 14% 28%);border-bottom:2px solid #ecebe6}
+.slate .g{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1.4fr 1fr 1fr;border-left:1px solid #3a3a42}
+.slate .g>div{border-right:1px solid #3a3a42;border-bottom:1px solid #3a3a42;padding:4% 5%;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.slate .g>div.w{grid-column:1/-1}
+.slate small{font-size:clamp(6px,.6vw,9px);color:var(--muted)}
+.slate b{font-family:var(--font-sans);font-weight:700;letter-spacing:-.02em;text-transform:none;font-size:clamp(9px,2.2vw,30px);line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slate .g>div.w b{font-size:clamp(12px,3.4vw,46px)}
+.mon .slate{top:20px;grid-template-rows:24% 1fr}.mon .slate .g{grid-template-rows:1fr}.mon .slate .g>div:not(.w){display:none}.mon .slate small{display:none}.mon .slate .g>div.w{justify-content:center}.mon .slate .g>div.w b{font-size:clamp(8px,.75vw,11px);white-space:normal}
+.live .slate{grid-template-rows:9% 1fr}.live .slate .g{grid-template-columns:1fr 1fr;grid-template-rows:1.3fr repeat(3,1fr) 1.1fr}.live .slate .g>div{padding:5% 6%}
+.live .slate b{font-size:clamp(14px,2vw,26px)}.live .slate .g>div.w b{font-size:clamp(22px,3.4vw,44px)}.live .slate small{font-size:10px}
+
 /* stacked cards */
 .stack{position:relative;--n:6}
 .scard{position:sticky;top:calc(76px + var(--i,0)*18px + env(safe-area-inset-top,0px));margin-bottom:36vh;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(24px,3.6vw,44px);min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:start;transform-origin:top center;will-change:transform,filter;box-shadow:0 -14px 40px rgba(0,0,0,.55)}
@@ -251,14 +264,6 @@ footer nav{display:flex;gap:20px}
 footer a{color:var(--muted);text-decoration:none;font-size:14px}
 footer a:hover{color:var(--fg)}
 
-/* CH 00 */
-.ch0{position:fixed;inset:0;z-index:70;background:#160c0e;display:none;align-content:center;padding-left:var(--gl);padding-right:var(--gr);padding-block:80px;overflow:auto}
-.ch0.on{display:grid}
-.ch0 .in{max-width:860px;display:grid;gap:20px}
-.ch0 .tag{display:flex;gap:10px;align-items:center;color:var(--rec)}
-.ch0 h2{font-size:clamp(40px,7vw,104px);line-height:.95}
-.ch0 p{margin:0;max-width:34em;font-size:clamp(17px,1.7vw,21px)}
-.ch0 .x{position:absolute;right:var(--gr);top:calc(16px + env(safe-area-inset-top,0px));background:none;border:1px solid var(--line-strong);border-radius:999px;color:var(--fg);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;padding:8px 14px;cursor:pointer}
 @media (prefers-reduced-motion:reduce){.rec-dot{animation:none}.js .rv{opacity:1;transform:none}}
 
 .hero{padding-block:clamp(48px,9vh,110px) clamp(40px,7vh,80px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:center}
@@ -293,9 +298,6 @@ footer a:hover{color:var(--fg)}
 .mv .pgm .safe::before,.mv .pgm .safe::after{content:"";position:absolute;background:rgba(236,235,230,.2)}
 .mv .pgm .safe::before{left:50%;top:48%;width:1px;height:4%}
 .mv .pgm .safe::after{top:50%;left:48%;height:1px;width:4%}
-.mv .pgm .lower{position:absolute;left:10px;bottom:10px;z-index:3;display:grid;gap:2px;background:rgba(10,10,12,.75);backdrop-filter:blur(6px);padding:8px 12px;border-radius:8px;border-left:3px solid var(--rec)}
-.mv .pgm .lower b{font-size:14px;font-weight:600;letter-spacing:-.02em}
-.mv .pgm .lower span{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .mv .pvw{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
 .mv .pvw .mon{aspect-ratio:16/10;border-radius:4px;cursor:pointer;border-color:var(--line);transform:none}
 .mv .pvw .mon:hover{border-color:var(--line-strong)}
@@ -321,19 +323,9 @@ footer a:hover{color:var(--fg)}
 <div class="intro" id="intro" aria-hidden="true"><div class="n" id="intro-n">3</div><div class="bar"><i id="intro-bar"></i></div></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
-<div class="ch0" id="ch0" role="dialog" aria-modal="true" aria-labelledby="ch0-title">
-  <button class="x" type="button" id="ch0-x">ESC · <span data-i18n="ch0.close"></span></button>
-  <div class="in">
-    <div class="tag mono"><span class="rec-dot"></span>CH 00 · <span data-i18n="ch0.tag"></span></div>
-    <h2 id="ch0-title" data-i18n="ch0.title"></h2>
-    <p data-i18n="ch0.p1"></p>
-    <p data-i18n="ch0.p2"></p>
-    <div class="mono" data-i18n="ch0.sig"></div>
-  </div>
-</div>
 
 <header class="head" id="head"><div class="wrap nav">
-  <div class="brand"><button class="hidden-btn" type="button" id="rec-btn" title="CH 00"><span class="rec-dot"></span></button><span>Sandra Pudja</span><span class="hud"><span class="mono" id="hud-tc">00:00:00:00</span><span class="mono" id="hud-ch">CH 01</span></span></div>
+  <div class="brand"><span class="rec-dot"></span><span>Sandra Pudja</span><span class="hud"><span class="mono" id="hud-tc">00:00:00:00</span><span class="mono" id="hud-ch">CH 01</span></span></div>
   <nav class="links" id="links"><a href="#services" data-i18n="svc.eyebrow"></a><a href="#way" data-i18n="way.eyebrow"></a><a href="#booking-sec" data-i18n="book.eyebrow"></a></nav>
   <div class="right">
     <div class="lang" id="lang">
@@ -353,11 +345,10 @@ footer a:hover{color:var(--fg)}
   <div>
     <div class="mv" id="mv" aria-hidden="true">
       <div class="pgm" id="pgm">
-        <img src="../sandra.jpg" alt="" id="pgm-img">
+        <img src="../off-duty.jpg" alt="" id="pgm-img" style="opacity:0">
         <div class="feed" id="pgm-feed"></div>
         <span class="safe"></span>
         <div class="ov"><span class="chip"><span class="rec-dot"></span>PGM · <span id="pgm-src">CAM 1</span></span><span class="chip tc" id="pgm-tc">00:00:00:00</span></div>
-        <div class="lower"><b>Sandra Pudja</b><span data-i18n="hero.role"></span></div>
       </div>
       <div class="pvw" id="wall"></div>
       <div class="deck">
@@ -451,7 +442,7 @@ footer a:hover{color:var(--fg)}
       </form>
     </div>
     <div class="live" aria-hidden="true">
-      <img src="../sandra.jpg" alt="">
+      <div id="live-slate"></div>
       <span class="tag"><span class="rec-dot"></span>Live</span>
       <span class="tc2" id="live-tc">00:00:00:00</span>
       <div class="foot"><b data-i18n="book.status"></b><span data-i18n="x.livesub"></span></div>
@@ -478,8 +469,8 @@ footer a:hover{color:var(--fg)}
   var touch = window.matchMedia("(hover: none)").matches;
   document.documentElement.classList.add("js");
   var T = {
-    hr:{ "intro.lbl":"klikni za preskakanje","ch0.close":"zatvori","ch0.tag":"tajni kanal","ch0.title":"Sretan rođendan, Sandra.","ch0.p1":"Oduvijek si htjela imati svoj web. Evo ga. Napravljen je kao režija jer te tamo najčešće vidim: mirna, dok svi oko tebe vrište, s planom koji je gotov prije nego što itko shvati da ga treba.","ch0.p2":"Sve ovdje možeš mijenjati, dodavati i brisati. Jedino što ostaje je ovaj kanal.","ch0.sig":"— Andro","hero.role":"producentica","hero.tag":"projektna podrška","hero.tag2":"istraživanje i pronalaženje","hero.scroll":"Scroll",
-      "svc.eyebrow":"Usluge","svc.cams":"4 kamere · sve uključene","svc.title":"Što radim","svc.lede":"Četiri stvari koje radim, i radim ih tako da ih nitko ne primijeti. To je i poanta.","svc.hint":"Klik za detalje",
+    hr:{ "intro.lbl":"klikni za preskakanje","hero.role":"producentica","hero.tag":"projektna podrška","hero.tag2":"istraživanje i pronalaženje","hero.scroll":"Scroll",
+      "svc.eyebrow":"Usluge","svc.cams":"4 kamere · sve uključene","svc.title":"Što radim","svc.lede":"Četiri načina na koja možemo surađivati. Odaberi jedan ili mi reci o čemu se radi.","svc.hint":"Klik za detalje",
       "svc.1.t":"Live i event produkcija","svc.1.d":"Sport, koncerti, summiti, breaking news. Uživo, na vrijeme, bez drugog take-a.","svc.1.m":"120+ live produkcija i 100+ livestreamova godišnje za međunarodne video agencije u Berlinu i Abu Dhabiju, s field producentima diljem svijeta. Svakodnevica: brze odluke, koordinacija internih timova i B2B partnera, i raspored koji se mijenja iz sata u sat. Ja to planiram, složim ekipu i držim u eteru.",
       "svc.2.t":"Medijski i creator projekti","svc.2.d":"Od ideje i pitcha do isporuke. Kampanje, sadržaj, creatori i radionice.","svc.2.m":"Kao Executive Producer za EU medijske i poslovne projekte radim s agencijama koje podržavaju creatore: kampanje, suradnje i radionice o sadržaju. Iza toga su tri godine vlastite digitalne agencije, u kojoj su jednokratni projekti prerasli u dugoročne ugovore, i početak kao novinarka u najčitanijim hrvatskim medijima. Ponude, budžeti, creatori, sadržaj i pitch deckovi.",
       "svc.3.t":"Operativa i podrška projektima","svc.3.d":"Imaš projekt ili tim. Ja se brinem da je sve organizirano i da ide naprijed.","svc.3.m":"Operativa za dostavnog partnera globalne e-commerce kompanije: ugovori o radu i s dobavljačima, izvještaji i komunikacija u timu. Rasporedi smjena za 30+ međunarodnih kolega. Educirana sam za analitiku podataka, pa izvještaji pokazuju gdje stvari stvarno stoje. Procesi, rasporedi, ugovori, dobavljači, dashboardi.",
@@ -491,14 +482,14 @@ footer a:hover{color:var(--fg)}
       "way.4.t":"Svaki zadatak ima vlasnika","way.4.d":"Nema „netko će“. Ime i datum.",
       "way.5.t":"Ljudi prvo","way.5.d":"Projekti se oslanjaju na ljude.",
       "way.6.t":"Ništa ne ostaje visjeti","way.6.d":"Pratim sve dok nije gotovo.",
-      "book.eyebrow":"Booking","book.status":"Otvoreno za nove projekte","book.title":"Rezerviraj me","book.lede":"Napiši što snimaš i kad. Odgovor stiže brže nego što misliš, s pitanjima koja nisi očekivao.",
+      "book.eyebrow":"Booking","book.status":"Otvoreno za nove projekte","book.title":"Rezerviraj me","book.lede":"Napiši što trebaš i do kada. Odgovaram unutar 48 sati.",
       "book.name":"Ime i prezime","book.email":"Tvoj e-mail","book.type":"Vrsta projekta","book.date":"Okvirni datum","book.msg":"O čemu se radi","book.send":"Pošalji upit","book.or":"ili direktno na","book.copy":"Kopiraj","book.copied":"Kopirano",
       "book.err.name":"Upiši ime.","book.err.email":"Upiši ispravan e-mail.","book.err.msg":"Napiši barem rečenicu.",
       "book.sent":"Otvara se tvoj mail program s ispunjenom porukom. Ako se nije otvorio, kopiraj adresu iznad i pošalji ručno.",
       "book.sending":"Šaljem…","book.ok":"Poslano. Odgovaram unutar 48 sati — kopiju dobivaš na mail.","book.fail":"Trenutno ne mogu poslati. Piši direktno na hello@sandrapudja.com.","book.subject":"Booking upit","book.body.type":"Vrsta projekta","book.body.date":"Okvirni datum","book.body.from":"Od",
       "end.eyebrow":"Kraj programa","end.title":"End of transmission","end.col":"Sandra Pudja · TV producentica · Berlin" },
-    en:{ "intro.lbl":"click to skip","ch0.close":"close","ch0.tag":"secret channel","ch0.title":"Happy birthday, Sandra.","ch0.p1":"You always wanted a website of your own. Here it is. It is built as a control room because that is where I see you most: calm while everyone around you shouts, with a plan finished before anyone realises one is needed.","ch0.p2":"Change, add and delete anything here. The only thing that stays is this channel.","ch0.sig":"— Andro","hero.role":"producer","hero.tag":"project support","hero.tag2":"research & sourcing","hero.scroll":"Scroll",
-      "svc.eyebrow":"Services","svc.cams":"4 cameras · all live","svc.title":"What I do","svc.lede":"Four things I do, and do so well nobody notices. That is the point.","svc.hint":"Click for details",
+    en:{ "intro.lbl":"click to skip","hero.role":"producer","hero.tag":"project support","hero.tag2":"research & sourcing","hero.scroll":"Scroll",
+      "svc.eyebrow":"Services","svc.cams":"4 cameras · all live","svc.title":"What I do","svc.lede":"Four ways to work with me. Pick one, or tell me what's going on.","svc.hint":"Click for details",
       "svc.1.t":"Live & event production","svc.1.d":"Sports, concerts, summits, breaking news. Live, on time, no second take.","svc.1.m":"120+ live productions and 100+ livestreams a year for international video agencies in Berlin and Abu Dhabi, with field producers all over the world. Daily life was fast decisions, in-house teams and B2B partners to coordinate, and a schedule that changed by the hour. I plan it, staff it and keep it on air.",
       "svc.2.t":"Media & creator projects","svc.2.d":"From idea and pitch to delivery. Campaigns, content, creators and workshops.","svc.2.m":"As Executive Producer for EU media and business projects, I work with agencies that support creators: campaigns, collaborations and content workshops. Behind it: three years running my own digital agency, where one-off projects grew into long-term contracts, and a start as a journalist at Croatia's most-read news outlets. Proposals, budgets, creators, content and pitch decks.",
       "svc.3.t":"Operations & project support","svc.3.d":"You have a project or a team. I keep it organised and moving.","svc.3.m":"Operations for a delivery partner of a global e-commerce company: employee and vendor contracts, reporting and team communication. Shift schedules for 30+ international colleagues. Trained in data analytics, so the reporting shows where things actually stand. Processes, schedules, contracts, vendors, dashboards.",
@@ -510,14 +501,14 @@ footer a:hover{color:var(--fg)}
       "way.4.t":"Every task has an owner","way.4.d":"No \"someone will do it\". A name and a date.",
       "way.5.t":"People first","way.5.d":"Projects run on people.",
       "way.6.t":"No loose ends","way.6.d":"I follow up until it's finished.",
-      "book.eyebrow":"Booking","book.status":"Open for new projects","book.title":"Book me","book.lede":"Say what you are shooting and when. The reply comes faster than you expect, with questions you did not.",
+      "book.eyebrow":"Booking","book.status":"Open for new projects","book.title":"Book me","book.lede":"Tell me what you need and by when. I reply within 48 hours.",
       "book.name":"Full name","book.email":"Your e-mail","book.type":"Project type","book.date":"Rough date","book.msg":"What it is about","book.send":"Send request","book.or":"or directly at","book.copy":"Copy","book.copied":"Copied",
       "book.err.name":"Enter your name.","book.err.email":"Enter a valid e-mail.","book.err.msg":"Write at least a sentence.",
       "book.sent":"Your mail app opens with the message filled in. If it did not, copy the address above and send it yourself.",
       "book.sending":"Sending…","book.ok":"Sent. I reply within 48 hours — you also get a copy by e-mail.","book.fail":"Could not send right now. Write directly to hello@sandrapudja.com.","book.subject":"Booking request","book.body.type":"Project type","book.body.date":"Rough date","book.body.from":"From",
       "end.eyebrow":"End of programme","end.title":"End of transmission","end.col":"Sandra Pudja · TV producer · Berlin" },
-    de:{ "intro.lbl":"Klick zum Überspringen","ch0.close":"schließen","ch0.tag":"geheimer Kanal","ch0.title":"Alles Gute zum Geburtstag, Sandra.","ch0.p1":"Du wolltest schon immer eine eigene Website. Hier ist sie. Gebaut wie eine Regie, weil ich dich dort am häufigsten sehe: ruhig, während alle um dich herum schreien, mit einem Plan, der fertig ist, bevor jemand merkt, dass er gebraucht wird.","ch0.p2":"Ändere, ergänze und lösche hier, was du willst. Das Einzige, was bleibt, ist dieser Kanal.","ch0.sig":"— Andro","hero.role":"Produzentin","hero.tag":"Projektunterstützung","hero.tag2":"Recherche & Sourcing","hero.scroll":"Scrollen",
-      "svc.eyebrow":"Leistungen","svc.cams":"4 Kameras · alle live","svc.title":"Was ich mache","svc.lede":"Vier Dinge, die ich mache, und zwar so, dass es niemand merkt. Genau das ist der Punkt.","svc.hint":"Klick für Details",
+    de:{ "intro.lbl":"Klick zum Überspringen","hero.role":"Produzentin","hero.tag":"Projektunterstützung","hero.tag2":"Recherche & Sourcing","hero.scroll":"Scrollen",
+      "svc.eyebrow":"Leistungen","svc.cams":"4 Kameras · alle live","svc.title":"Was ich mache","svc.lede":"Vier Wege, mit mir zu arbeiten. Such dir einen aus oder erzähl mir, worum es geht.","svc.hint":"Klick für Details",
       "svc.1.t":"Live- & Event-Produktion","svc.1.d":"Sport, Konzerte, Gipfel, Breaking News. Live, pünktlich, ohne zweiten Take.","svc.1.m":"120+ Live-Produktionen und 100+ Livestreams pro Jahr für internationale Videoagenturen in Berlin und Abu Dhabi, mit Field Producern auf der ganzen Welt. Der Alltag: schnelle Entscheidungen, interne Teams und B2B-Partner koordinieren, und ein Zeitplan, der sich stündlich ändert. Ich plane es, stelle die Crew zusammen und halte es auf Sendung.",
       "svc.2.t":"Medien- & Creator-Projekte","svc.2.d":"Von der Idee und dem Pitch bis zur Lieferung. Kampagnen, Content, Creator und Workshops.","svc.2.m":"Als Executive Producer für EU-Medien- und Business-Projekte arbeite ich mit Agenturen, die Creator betreuen: Kampagnen, Kooperationen und Content-Workshops. Dahinter stehen drei Jahre eigene Digitalagentur, in der aus Einzelprojekten langfristige Verträge wurden, und ein Start als Journalistin bei den meistgelesenen kroatischen Nachrichtenmedien. Angebote, Budgets, Creator, Content und Pitch-Decks.",
       "svc.3.t":"Operations & Projektunterstützung","svc.3.d":"Du hast ein Projekt oder ein Team. Ich halte es organisiert und in Bewegung.","svc.3.m":"Operations für einen Lieferpartner eines globalen E-Commerce-Konzerns: Arbeits- und Lieferantenverträge, Reporting und Teamkommunikation. Schichtpläne für 30+ internationale Kolleginnen und Kollegen. Ausgebildet in Datenanalyse, damit das Reporting zeigt, wo die Dinge wirklich stehen. Prozesse, Zeitpläne, Verträge, Lieferanten, Dashboards.",
@@ -529,7 +520,7 @@ footer a:hover{color:var(--fg)}
       "way.4.t":"Jede Aufgabe hat einen Besitzer","way.4.d":"Kein „macht schon jemand“. Ein Name und ein Datum.",
       "way.5.t":"Menschen zuerst","way.5.d":"Projekte laufen über Menschen.",
       "way.6.t":"Keine losen Enden","way.6.d":"Ich bleibe dran, bis es fertig ist.",
-      "book.eyebrow":"Booking","book.status":"Offen für neue Projekte","book.title":"Buch mich","book.lede":"Schreib, was du drehst und wann. Die Antwort kommt schneller als erwartet, mit Fragen, die du nicht erwartet hast.",
+      "book.eyebrow":"Booking","book.status":"Offen für neue Projekte","book.title":"Buch mich","book.lede":"Schreib, was du brauchst und bis wann. Ich antworte innerhalb von 48 Stunden.",
       "book.name":"Vor- und Nachname","book.email":"Deine E-Mail","book.type":"Projektart","book.date":"Ungefähres Datum","book.msg":"Worum geht es","book.send":"Anfrage senden","book.or":"oder direkt an","book.copy":"Kopieren","book.copied":"Kopiert",
       "book.err.name":"Namen eingeben.","book.err.email":"Gültige E-Mail eingeben.","book.err.msg":"Mindestens einen Satz schreiben.",
       "book.sent":"Dein Mailprogramm öffnet sich mit der ausgefüllten Nachricht. Falls nicht, kopiere die Adresse oben und sende sie selbst.",
@@ -537,9 +528,9 @@ footer a:hover{color:var(--fg)}
       "end.eyebrow":"Sendeschluss","end.title":"End of transmission","end.col":"Sandra Pudja · TV-Produzentin · Berlin" }
   };
 
-  var EXTRA = { en:{"x.h1sub":"Give me your list. I'll get it done.","x.see":"See services","x.s1":"areas of work","x.s2":"live productions","x.s3":"to reply to a request","x.s4":"languages on set","x.livesub":"Studio, live and location. Berlin and beyond.","x.claim":"The TV producer who keeps everything under control.","x.claimsub":"Studio, live and location. Call sheet before coffee, plan B has a plan C, and nobody on set asks \"what now?\"","x.grow":"grows as you scroll","x.follow":"follows you","x.mvhint":"Hover a preview to take it to programme","x.stackhint":"Scroll — each rule stacks on the last","f.services":"Services","f.local":"Local","f.contact":"Contact","f.about":"About me","f.abouttxt":"I'm Sandra Pudja, a freelance TV producer based in Berlin, working in English, German and Croatian on studio, live and location productions across Europe.","way.1.l":"Schedules, owners and deadlines are clear before anything starts, whether it's a live show, a campaign or your week. For 30+ colleagues across time zones, the schedule was the one thing everyone trusted.","way.1.cta":"Send me your dates","way.1.tag":"Planning","way.2.l":"Breaking news doesn't wait, and neither do clients. I think through what could go wrong before it does, so when something breaks, the next step is already there.","way.2.cta":"Tell me what could go wrong","way.2.tag":"Risk","way.3.l":"Live production taught me to decide quickly and calmly: what, who, when, next. It works the same in a launch week or an overflowing inbox.","way.3.cta":"Book me for a live","way.3.tag":"Pressure","way.4.l":"Every item has a person and a deadline next to it, and that person knows it. In-house teams, B2B partners, freelancers and creators all know what's theirs.","way.4.cta":"Start with one task","way.4.tag":"Clarity","way.5.l":"Clients, partners, crews and creators: everyone knows who to ask, and nobody is left waiting. That's why one-off projects at my agency turned into long-term contracts.","way.5.cta":"Let's talk","way.5.tag":"Relationships","way.6.l":"I chase what needs chasing, close what's open, and you get a short note when it's done. Then on to the next thing.","way.6.cta":"Start a project","way.6.tag":"Delivery","way.cta.t":"Sounds like what you need?","way.cta.d":"Write three sentences about what needs doing and by when. I reply within 48 hours."},
-                hr:{"x.h1sub":"Daj mi svoj popis. Ja ću ga riješiti.","x.see":"Pogledaj usluge","x.s1":"područja rada","x.s2":"live produkcija","x.s3":"za odgovor na upit","x.s4":"jezika na setu","x.livesub":"Studio, live i teren. Berlin i šire.","x.claim":"TV producentica koja sve drži pod kontrolom.","x.claimsub":"Studio, live i teren. Call sheet prije kave, plan B ima plan C, i nitko na setu ne pita „što sad?“","x.grow":"raste na scroll","x.follow":"prati te","x.mvhint":"Pređi mišem preko previewa da ga pustiš u program","x.stackhint":"Scrollaj — svako pravilo se slaže na prethodno","f.services":"Usluge","f.local":"Lokalno","f.contact":"Kontakt","f.about":"O meni","f.abouttxt":"Ja sam Sandra Pudja, samostalna TV producentica iz Berlina. Radim na engleskom, njemačkom i hrvatskom na studijskim, live i terenskim produkcijama diljem Europe.","way.1.l":"Rasporedi, odgovorne osobe i rokovi jasni su prije nego što išta krene, bilo da je riječ o live emisiji, kampanji ili tvom tjednu. Za 30+ kolega u različitim vremenskim zonama raspored je bio ono čemu su svi vjerovali.","way.1.cta":"Pošalji mi datume","way.1.tag":"Planiranje","way.2.l":"Breaking news ne čeka, a ne čekaju ni klijenti. Unaprijed razmislim što može poći po zlu, pa kad nešto pukne, sljedeći korak je već spreman.","way.2.cta":"Reci mi što može poći po zlu","way.2.tag":"Rizik","way.3.l":"Live produkcija naučila me da odlučujem brzo i mirno: što, tko, kad, dalje. Isto funkcionira u tjednu lansiranja ili u pretrpanom inboxu.","way.3.cta":"Rezerviraj me za live","way.3.tag":"Pritisak","way.4.l":"Uz svaku stavku stoje osoba i rok, i ta osoba to zna. Interni timovi, B2B partneri, freelanceri i creatori znaju što je njihovo.","way.4.cta":"Počni s jednim zadatkom","way.4.tag":"Jasnoća","way.5.l":"Klijenti, partneri, ekipe i creatori: svatko zna koga pitati i nitko ne ostaje čekati. Zato su jednokratni projekti u mojoj agenciji prerasli u dugoročne ugovore.","way.5.cta":"Razgovarajmo","way.5.tag":"Odnosi","way.6.l":"Požurujem ono što treba požuriti, zatvaram ono što je otvoreno, a kad je gotovo, dobiješ kratku poruku. Onda idemo na sljedeće.","way.6.cta":"Pokreni projekt","way.6.tag":"Isporuka","way.cta.t":"Zvuči kao ono što trebaš?","way.cta.d":"Napiši tri rečenice o tome što treba napraviti i do kada. Odgovaram unutar 48 sati."},
-                de:{"x.h1sub":"Gib mir deine Liste. Ich erledige sie.","x.see":"Leistungen ansehen","x.s1":"Arbeitsbereiche","x.s2":"Live-Produktionen","x.s3":"bis zur Antwort","x.s4":"Sprachen am Set","x.livesub":"Studio, Live und Außendreh. Berlin und darüber hinaus.","x.claim":"Die TV-Produzentin, die alles unter Kontrolle hält.","x.claimsub":"Studio, Live und Außendreh. Call Sheet vor dem Kaffee, Plan B hat einen Plan C, und niemand am Set fragt „und jetzt?“","x.grow":"wächst beim Scrollen","x.follow":"folgt dir","x.mvhint":"Fahre über eine Vorschau, um sie auf Programm zu schalten","x.stackhint":"Scrollen — jede Regel stapelt sich auf die vorige","f.services":"Leistungen","f.local":"Lokal","f.contact":"Kontakt","f.about":"Über mich","f.abouttxt":"Ich bin Sandra Pudja, freie TV-Produzentin mit Sitz in Berlin, und arbeite auf Deutsch, Englisch und Kroatisch an Studio-, Live- und Außenproduktionen in ganz Europa.","way.1.l":"Zeitpläne, Zuständigkeiten und Deadlines stehen fest, bevor etwas startet, ob Live-Show, Kampagne oder deine Woche. Für 30+ Kolleginnen und Kollegen über Zeitzonen hinweg war der Zeitplan das, worauf sich alle verlassen haben.","way.1.cta":"Schick mir deine Termine","way.1.tag":"Planung","way.2.l":"Breaking News wartet nicht, Kunden auch nicht. Ich denke vorher durch, was schiefgehen kann, damit der nächste Schritt schon bereitsteht, wenn etwas kaputtgeht.","way.2.cta":"Sag mir, was schiefgehen könnte","way.2.tag":"Risiko","way.3.l":"Live-Produktion hat mir beigebracht, schnell und ruhig zu entscheiden: was, wer, wann, weiter. Das funktioniert genauso in einer Launch-Woche oder bei einem vollen Postfach.","way.3.cta":"Für ein Live buchen","way.3.tag":"Druck","way.4.l":"Neben jedem Punkt stehen eine Person und eine Deadline, und diese Person weiß es. Interne Teams, B2B-Partner, Freelancer und Creator wissen, was ihres ist.","way.4.cta":"Mit einer Aufgabe anfangen","way.4.tag":"Klarheit","way.5.l":"Kunden, Partner, Crews und Creator: Alle wissen, wen sie fragen können, und niemand wartet. Deshalb wurden aus Einzelprojekten in meiner Agentur langfristige Verträge.","way.5.cta":"Lass uns reden","way.5.tag":"Beziehungen","way.6.l":"Ich hake nach, wo nachgehakt werden muss, schließe ab, was offen ist, und du bekommst eine kurze Nachricht, wenn es erledigt ist. Dann zum nächsten Punkt.","way.6.cta":"Projekt starten","way.6.tag":"Lieferung","way.cta.t":"Klingt nach dem, was du brauchst?","way.cta.d":"Schreib drei Sätze darüber, was zu tun ist und bis wann. Ich antworte innerhalb von 48 Stunden."} };
+  var EXTRA = { en:{"x.slate":"Your next project","x.h1sub":"Give me your list. I'll get it done.","x.see":"See services","x.s1":"areas of work","x.s2":"live productions","x.s3":"to reply to a request","x.s4":"languages on set","x.livesub":"Live, projects, operations. Berlin and remote.","x.claim":"The TV producer who keeps everything under control.","x.claimsub":"Studio, live and location. Call sheet before coffee, plan B has a plan C, and nobody on set asks \"what now?\"","x.grow":"grows as you scroll","x.follow":"follows you","x.mvhint":"Hover a preview to take it to programme","x.stackhint":"Scroll — each rule stacks on the last","f.services":"Services","f.local":"Local","f.contact":"Contact","f.about":"About me","f.abouttxt":"I'm Sandra Pudja, a freelance TV producer based in Berlin, working in English, German and Croatian on studio, live and location productions across Europe.","way.1.l":"Schedules, owners and deadlines are clear before anything starts, whether it's a live show, a campaign or your week. For 30+ colleagues across time zones, the schedule was the one thing everyone trusted.","way.1.cta":"Send me your dates","way.1.tag":"Planning","way.2.l":"Breaking news doesn't wait, and neither do clients. I think through what could go wrong before it does, so when something breaks, the next step is already there.","way.2.cta":"Tell me what could go wrong","way.2.tag":"Risk","way.3.l":"Live production taught me to decide quickly and calmly: what, who, when, next. It works the same in a launch week or an overflowing inbox.","way.3.cta":"Book me for a live","way.3.tag":"Pressure","way.4.l":"Every item has a person and a deadline next to it, and that person knows it. In-house teams, B2B partners, freelancers and creators all know what's theirs.","way.4.cta":"Start with one task","way.4.tag":"Clarity","way.5.l":"Clients, partners, crews and creators: everyone knows who to ask, and nobody is left waiting. That's why one-off projects at my agency turned into long-term contracts.","way.5.cta":"Let's talk","way.5.tag":"Relationships","way.6.l":"I chase what needs chasing, close what's open, and you get a short note when it's done. Then on to the next thing.","way.6.cta":"Start a project","way.6.tag":"Delivery","way.cta.t":"Sounds like what you need?","way.cta.d":"Write three sentences about what needs doing and by when. I reply within 48 hours."},
+                hr:{"x.slate":"Tvoj sljedeći projekt","x.h1sub":"Daj mi svoj popis. Ja ću ga riješiti.","x.see":"Pogledaj usluge","x.s1":"područja rada","x.s2":"live produkcija","x.s3":"za odgovor na upit","x.s4":"jezika na setu","x.livesub":"Live, projekti, operativa. Berlin i remote.","x.claim":"TV producentica koja sve drži pod kontrolom.","x.claimsub":"Studio, live i teren. Call sheet prije kave, plan B ima plan C, i nitko na setu ne pita „što sad?“","x.grow":"raste na scroll","x.follow":"prati te","x.mvhint":"Pređi mišem preko previewa da ga pustiš u program","x.stackhint":"Scrollaj — svako pravilo se slaže na prethodno","f.services":"Usluge","f.local":"Lokalno","f.contact":"Kontakt","f.about":"O meni","f.abouttxt":"Ja sam Sandra Pudja, samostalna TV producentica iz Berlina. Radim na engleskom, njemačkom i hrvatskom na studijskim, live i terenskim produkcijama diljem Europe.","way.1.l":"Rasporedi, odgovorne osobe i rokovi jasni su prije nego što išta krene, bilo da je riječ o live emisiji, kampanji ili tvom tjednu. Za 30+ kolega u različitim vremenskim zonama raspored je bio ono čemu su svi vjerovali.","way.1.cta":"Pošalji mi datume","way.1.tag":"Planiranje","way.2.l":"Breaking news ne čeka, a ne čekaju ni klijenti. Unaprijed razmislim što može poći po zlu, pa kad nešto pukne, sljedeći korak je već spreman.","way.2.cta":"Reci mi što može poći po zlu","way.2.tag":"Rizik","way.3.l":"Live produkcija naučila me da odlučujem brzo i mirno: što, tko, kad, dalje. Isto funkcionira u tjednu lansiranja ili u pretrpanom inboxu.","way.3.cta":"Rezerviraj me za live","way.3.tag":"Pritisak","way.4.l":"Uz svaku stavku stoje osoba i rok, i ta osoba to zna. Interni timovi, B2B partneri, freelanceri i creatori znaju što je njihovo.","way.4.cta":"Počni s jednim zadatkom","way.4.tag":"Jasnoća","way.5.l":"Klijenti, partneri, ekipe i creatori: svatko zna koga pitati i nitko ne ostaje čekati. Zato su jednokratni projekti u mojoj agenciji prerasli u dugoročne ugovore.","way.5.cta":"Razgovarajmo","way.5.tag":"Odnosi","way.6.l":"Požurujem ono što treba požuriti, zatvaram ono što je otvoreno, a kad je gotovo, dobiješ kratku poruku. Onda idemo na sljedeće.","way.6.cta":"Pokreni projekt","way.6.tag":"Isporuka","way.cta.t":"Zvuči kao ono što trebaš?","way.cta.d":"Napiši tri rečenice o tome što treba napraviti i do kada. Odgovaram unutar 48 sati."},
+                de:{"x.slate":"Dein nächstes Projekt","x.h1sub":"Gib mir deine Liste. Ich erledige sie.","x.see":"Leistungen ansehen","x.s1":"Arbeitsbereiche","x.s2":"Live-Produktionen","x.s3":"bis zur Antwort","x.s4":"Sprachen am Set","x.livesub":"Live, Projekte, Operations. Berlin und remote.","x.claim":"Die TV-Produzentin, die alles unter Kontrolle hält.","x.claimsub":"Studio, Live und Außendreh. Call Sheet vor dem Kaffee, Plan B hat einen Plan C, und niemand am Set fragt „und jetzt?“","x.grow":"wächst beim Scrollen","x.follow":"folgt dir","x.mvhint":"Fahre über eine Vorschau, um sie auf Programm zu schalten","x.stackhint":"Scrollen — jede Regel stapelt sich auf die vorige","f.services":"Leistungen","f.local":"Lokal","f.contact":"Kontakt","f.about":"Über mich","f.abouttxt":"Ich bin Sandra Pudja, freie TV-Produzentin mit Sitz in Berlin, und arbeite auf Deutsch, Englisch und Kroatisch an Studio-, Live- und Außenproduktionen in ganz Europa.","way.1.l":"Zeitpläne, Zuständigkeiten und Deadlines stehen fest, bevor etwas startet, ob Live-Show, Kampagne oder deine Woche. Für 30+ Kolleginnen und Kollegen über Zeitzonen hinweg war der Zeitplan das, worauf sich alle verlassen haben.","way.1.cta":"Schick mir deine Termine","way.1.tag":"Planung","way.2.l":"Breaking News wartet nicht, Kunden auch nicht. Ich denke vorher durch, was schiefgehen kann, damit der nächste Schritt schon bereitsteht, wenn etwas kaputtgeht.","way.2.cta":"Sag mir, was schiefgehen könnte","way.2.tag":"Risiko","way.3.l":"Live-Produktion hat mir beigebracht, schnell und ruhig zu entscheiden: was, wer, wann, weiter. Das funktioniert genauso in einer Launch-Woche oder bei einem vollen Postfach.","way.3.cta":"Für ein Live buchen","way.3.tag":"Druck","way.4.l":"Neben jedem Punkt stehen eine Person und eine Deadline, und diese Person weiß es. Interne Teams, B2B-Partner, Freelancer und Creator wissen, was ihres ist.","way.4.cta":"Mit einer Aufgabe anfangen","way.4.tag":"Klarheit","way.5.l":"Kunden, Partner, Crews und Creator: Alle wissen, wen sie fragen können, und niemand wartet. Deshalb wurden aus Einzelprojekten in meiner Agentur langfristige Verträge.","way.5.cta":"Lass uns reden","way.5.tag":"Beziehungen","way.6.l":"Ich hake nach, wo nachgehakt werden muss, schließe ab, was offen ist, und du bekommst eine kurze Nachricht, wenn es erledigt ist. Dann zum nächsten Punkt.","way.6.cta":"Projekt starten","way.6.tag":"Lieferung","way.cta.t":"Klingt nach dem, was du brauchst?","way.cta.d":"Schreib drei Sätze darüber, was zu tun ist und bis wann. Ich antworte innerhalb von 48 Stunden."} };
   Object.keys(EXTRA).forEach(function(l){ Object.keys(EXTRA[l]).forEach(function(k){ T[l][k] = EXTRA[l][k]; }); });
   var lang = "de";
   try{ var s = localStorage.getItem("sp-lang2"); if (s && T[s]) lang = s; }catch(e){}
@@ -567,12 +558,15 @@ footer a:hover{color:var(--fg)}
   var noise = document.createElement("canvas"); noise.width=320; noise.height=180; var nctx = noise.getContext("2d"); var nimg = nctx.createImageData(320,180);
   function drawNoise(){ var d=nimg.data; for (var i=0;i<d.length;i+=4){ var r=Math.random(); var v = r<.45 ? 25+Math.random()*45|0 : r<.9 ? 170+Math.random()*85|0 : 110; d[i]=v;d[i+1]=v;d[i+2]=v;d[i+3]=255; } nctx.putImageData(nimg,0,0); }
   var noiseTargets = [], pgmNoiseCtx = null;
-  var PHOTOS = ["sandra.jpg"];
+  function slateHTML(){ var d=new Date(), dd=pad(d.getDate())+"."+pad(d.getMonth()+1)+"."+d.getFullYear();
+    return '<div class="slate"><span class="clap"></span><div class="g"><div class="w"><small>Production</small><b data-i18n="x.slate">'+((T[lang]&&T[lang]["x.slate"])||"Your next project")+'</b></div><div><small>Roll</small><b>A001</b></div><div><small>Scene</small><b>01</b></div><div><small>Take</small><b>1</b></div><div><small>Role</small><b>Producer</b></div><div><small>Date</small><b>'+dd+'</b></div><div><small>Loc</small><b>Berlin</b></div></div></div>'; }
+  var PHOTOS = ["../off-duty.jpg"];
   var mons = [], photoN = 0;
   function makeMon(m,i){
     var d = document.createElement("div"); d.className = "mon " + (m.k==="live"?"live":m.k==="name"?"name":m.cls||"");
     var lbl = "MON " + pad(i+1), inner = "";
-    if (m.k==="photo"){ photoN++; lbl = "CAM " + photoN; inner = '<img src="'+PHOTOS[(photoN-1)%PHOTOS.length]+'" alt="" style="--pos:'+m.pos+';--zoom:'+m.z+'">'; }
+    if (m.k==="slate"){ lbl = "SLATE"; inner = slateHTML(); }
+    else if (m.k==="photo"){ photoN++; lbl = m.lbl || ("CAM " + photoN); inner = '<img src="'+PHOTOS[(photoN-1)%PHOTOS.length]+'" alt="" style="--pos:'+m.pos+';--zoom:'+m.z+'">'; }
     else if (m.k==="bars") inner = barsHTML();
     else if (m.k==="name") inner = '<span class="word">'+m.t+'</span>';
     else if (m.k==="tc") inner = '<span class="word">'+tc(1000+i*7331)+'</span>';
@@ -641,13 +635,6 @@ footer a:hover{color:var(--fg)}
     intro.addEventListener("click", endIntro);
   }
 
-  /* CH 00 */
-  var ch0 = document.getElementById("ch0"), ch0Open = false;
-  function openCh0(){ ch0Open = true; ch0.classList.add("on"); document.documentElement.style.overflow = "hidden"; document.getElementById("ch0-x").focus(); }
-  function closeCh0(){ ch0Open = false; ch0.classList.remove("on"); document.documentElement.style.overflow = ""; }
-  document.getElementById("rec-btn").addEventListener("click", function(){ ch0Open ? closeCh0() : openCh0(); });
-  document.getElementById("ch0-x").addEventListener("click", closeCh0);
-  window.addEventListener("keydown", function(e){ if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return; if (e.key === "Escape" && ch0Open) closeCh0(); else if ((e.key === "r" || e.key === "R") && !ch0Open) openCh0(); });
 
   /* booking */
   var form = document.getElementById("booking"), sent = document.getElementById("sent");
@@ -692,16 +679,17 @@ footer a:hover{color:var(--fg)}
 
 
   var wall = document.getElementById("wall"), mv = document.getElementById("mv"), hero = document.getElementById("hero");
-  var seq = [ {k:"photo",pos:"50% 18%",z:1.1,cls:"",src:"CAM 1"}, {k:"noise",src:"CAM 2"}, {k:"photo",pos:"50% 28%",z:1.05,cls:"bw",src:"CAM 3"}, {k:"photo",pos:"50% 22%",z:1.25,cls:"warm",src:"CAM 4"}, {k:"bars",src:"BARS"}, {k:"live",src:"CLOCK"} ];
+  var ls = document.getElementById("live-slate"); if (ls) ls.outerHTML = slateHTML();
+  var seq = [ {k:"slate",src:"SLATE"}, {k:"noise",src:"CAM 2"}, {k:"photo",pos:"62% 30%",z:1.0,cls:"",src:"OFF DUTY",lbl:"OFF DUTY"}, {k:"nosig",src:"CAM 4"}, {k:"bars",src:"BARS"}, {k:"live",src:"CLOCK"} ];
   var pgmImg = document.getElementById("pgm-img"), pgmFeed = document.getElementById("pgm-feed"), pgmSrc = document.getElementById("pgm-src"), pgmTc = document.getElementById("pgm-tc");
   var selIdx = 0, autoT = null;
   function selectFeed(i){
-    selIdx = i; var m = seq[i];
+    selIdx = i; var m = seq[i]; document.getElementById("pgm").classList.toggle("slate-on", m.k==="slate");
     mons.forEach(function(d,j){ d.classList.toggle("sel", j===i); d.classList.toggle("on", j===i || d.querySelector("img") && j===i); });
     pgmSrc.textContent = m.src;
     if (m.k === "photo"){ pgmImg.style.opacity = 1; pgmImg.style.objectPosition = m.pos; pgmImg.style.transform = "scale("+m.z+")"; pgmImg.style.transformOrigin = m.pos; pgmImg.style.filter = m.cls==="bw" ? "grayscale(1) contrast(1.12)" : m.cls==="warm" ? "sepia(.35) saturate(1.1) contrast(1.05)" : "saturate(.8) contrast(1.05)"; pgmFeed.className = "feed"; pgmFeed.innerHTML = ""; }
     else { pgmImg.style.opacity = 0; pgmFeed.className = "feed on" + (m.k==="live" ? " live" : ""); if (m.k==="noise"){ pgmFeed.innerHTML = '<canvas width="640" height="400"></canvas>'; pgmNoiseCtx = pgmFeed.querySelector("canvas").getContext("2d"); }
-      else { pgmNoiseCtx = null; pgmFeed.innerHTML = m.k==="bars" ? barsHTML() : '<span class="word">'+tc(Date.now()/40 % 90000)+'</span>'; } }
+      else { pgmNoiseCtx = null; if (m.k==="nosig") pgmFeed.className = "feed on nosig"; pgmFeed.innerHTML = m.k==="slate" ? slateHTML() : m.k==="nosig" ? '<span class="word">No signal</span>' : m.k==="bars" ? barsHTML() : '<span class="word">'+tc(Date.now()/40 % 90000)+'</span>'; } }
   }
   seq.forEach(function(m,i){ var d = makeMon(m,i); d.dataset.depth = (0.4 + (i%3)*0.3).toFixed(2); wall.appendChild(d); mons.push(d);
     d.addEventListener("mouseenter", function(){ selectFeed(i); clearInterval(autoT); autoT = null; });

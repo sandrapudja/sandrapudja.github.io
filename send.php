@@ -6,7 +6,7 @@ header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
 $TO       = 'hello@sandrapudja.com';           // Sandra's inbox  <-- change here
-$FROM     = 'booking@sandrapudja.com';         // must be a mailbox on this domain (create it in hPanel → Emails) or Hostinger may drop it
+$FROM     = 'hello@sandrapudja.com';           // must be a mailbox on this domain (hello@ exists in hPanel → Emails) or Hostinger may drop it
 $SITE     = 'sandrapudja.com';
 
 function fail($code, $msg){ http_response_code($code); echo json_encode(['ok'=>false,'error'=>$msg]); exit; }

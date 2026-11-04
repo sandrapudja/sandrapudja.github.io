@@ -43,7 +43,7 @@ Intro countdown (3-2-1-ON AIR) plays once per browser session.
 
 ## Booking form / e-mail
 
-`send.php`, top of file: `$TO` = Sandra's inbox, `$FROM` = a mailbox that exists on this domain (create it in hPanel → Emails, e.g. `booking@sandrapudja.com`), otherwise Hostinger may drop the mail.
+`send.php`, top of file: `$TO` = Sandra's inbox, `$FROM` = a mailbox that exists on this domain (currently `hello@sandrapudja.com`, created in hPanel → Emails in Nov 2026), otherwise Hostinger may drop the mail.
 The `code` under the form and the fallback `mailto:` use `MAIL` in `index.php`; keep it equal to `$TO`.
 
 ## Rules

@@ -27,7 +27,7 @@ Service pages have their text inline in HTML; edit EN and DE separately.
 
 ## Structure of index.php
 
-1. **Hero** — name, role line, two buttons, and the **multiviewer** on the right (PGM screen + 6 preview monitors: CAM 1–4, BARS, CLOCK). Hover a preview to send it to PGM.
+1. **Hero** — name, role line, two buttons, and the **multiviewer** on the right (PGM screen + 6 preview monitors: SLATE, LIVE, YOUR LIST, THIS WEEK, OFF DUTY, BARS). Hover a preview to send it to PGM.
 2. **Stats** strip (4 / 0 / 48h / 3).
 3. **What I do** — 4 cards, each with an animated SVG scene (TV studio, live waveform, call sheet, right-hand to-do list). Click opens the long text.
 4. **How I work** — 6 cards that stack on scroll (`.scard`, sticky). Each has number, title, short, long, CTA.
@@ -39,7 +39,7 @@ Intro countdown (3-2-1-ON AIR) plays once per browser session.
 
 ## Adding photos
 
-`PHOTOS = ["off-duty.jpg"]` in the script; monitor sources are set in `seq` (slate, noise, photo, nosig, bars, live). The slate (`slateHTML`, text key `x.slate`) replaces the old AI portrait on the big screen and booking monitor. Add more filenames to the array; each photo monitor in the multiviewer takes the next one in turn. Keep photos ≤ 1200 px wide, JPEG quality ~80.
+`PHOTOS = ["off-duty.jpg"]` in the script; monitor sources are set in `seq` (slate, live, todo, week, photo, bars). The to-do and week feeds (`todoHTML`, `weekHTML`) take their texts per language from `FEEDS`. The line above the name is key `x.kick`. The slate (`slateHTML`, text key `x.slate`) replaces the old AI portrait on the big screen and booking monitor. Add more filenames to the array; each photo monitor in the multiviewer takes the next one in turn. Keep photos ≤ 1200 px wide, JPEG quality ~80.
 
 ## Booking form / e-mail
 
